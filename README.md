@@ -1,34 +1,8 @@
 
-# Android PdfViewer
-
-__AndroidPdfViewer 1.x is available on [AndroidPdfViewerV1](https://github.com/barteksc/AndroidPdfViewerV1)
-repo, where can be developed independently. Version 1.x uses different engine for drawing document on canvas,
-so if you don't like 2.x version, try 1.x.__
-
-Library for displaying PDF documents on Android, with `animations`, `gestures`, `zoom` and `double tap` support.
-It is based on [PdfiumAndroid](https://github.com/barteksc/PdfiumAndroid) for decoding PDF files. Works on API 11 (Android 3.0) and higher.
-Licensed under Apache License 2.0.
-
-## What's new in 3.2.0-beta.1?
-* Merge PR #714 with optimized page load
-* Merge PR #776 with fix for max & min zoom level
-* Merge PR #722 with fix for showing right position when view size changed
-* Merge PR #703 with fix for too many threads
-* Merge PR #702 with fix for memory leak
-* Merge PR #689 with possibility to disable long click
-* Merge PR #628 with fix for hiding scroll handle
-* Merge PR #627 with `fitEachPage` option
-* Merge PR #638 and #406 with fixed NPE
-* Merge PR #780 with README fix
-* Update compile SDK and support library to 28
-* Update Gradle and Gradle Plugin
-
-## Changes in 3.0 API
-* Replaced `Contants.PRELOAD_COUNT` with `PRELOAD_OFFSET`
-* Removed `PDFView#fitToWidth()` (variant without arguments)
-* Removed `Configurator#invalidPageColor(int)` method as invalid pages are not rendered
-* Removed page size parameters from `OnRenderListener#onInitiallyRendered(int)` method, as document may have different page sizes
-* Removed `PDFView#setSwipeVertical()` method
+# Android Pdf Viewer
+This is a modified version of android-pdf-viewer from barteksc, as it's not maintained anymore
+and no pull request are being revised since 2018, i creating this repo.
+The option dualmode has been add to be able to put 2 pdf pages on the same screen to read it like a book
 
 ## Installation
 

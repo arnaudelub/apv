@@ -1,0 +1,171 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+MERGED from [:android-pdf-viewer] /Users/arnaud/dev/Android/AndroidPdfViewer/android-pdf-viewer/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4d81424c2b6a3f4430b08e6e0a567863/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5cac573a5786a500385af5b061d783fc/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/939fa1c2e4144cec81ad70caa570af10/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1f478259edecbc666c31901e94efb584/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d24fab4d20fc0725772f0a7ae9a72b4a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/989205c66efe895c30eb45df5dfa67e6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e7f065e29cd5135c5264f23baf986fa2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d4282899e696e0826ff54c3be221cbeb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/40015f5ac247ce01d40f909865ab46c3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5841243d8337e01a542e47609478c16b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/515dab5889b1284b71366087a226a823/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/2dca0c778f8a95870e0aeedbaa08c50f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5c12dbc155f762cc82dfd850d32ed7c8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/076083cc857f3a1383fe19ed6f4eb4da/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/a4f70e4a834fb70898e3add8b4cee4a6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e1f55a2d0ebc70894b8d34c3ac365f22/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cdb1ae8c52b9868ec58eb308d87f9049/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/87cc3b17e21ad2208b5d45f6f108c9fc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e3d4cdcef9f54f79ef913aac32ff08ad/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e65f20a3c629e4127c73834db9686593/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f098de611e34224fdcc6053f056c0f62/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/c559057e5ce6da23b2d9e63c5ca0fd9e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e885d62bb618ea211213cad75a8a3681/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f10ab8848d898e38deefd114f2e4097d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cacaf791e8fe3ce16eae48714b3acf7b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1155888930b61ff4a576187f323abe05/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+	package
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:2:2-38
+	android:versionName
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:1-20:12
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:4:22-77
+application
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:6:2-18:16
+MERGED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e1f55a2d0ebc70894b8d34c3ac365f22/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e1f55a2d0ebc70894b8d34c3ac365f22/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:8:3-35
+	android:icon
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:7:3-39
+	android:theme
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:9:3-47
+activity#com.github.barteksc.sample.PDFViewActivity_
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:10:3-17:14
+	android:label
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:12:4-36
+	android:name
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:11:4-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:13:4-16:20
+action#android.intent.action.MAIN
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:14:5-57
+	android:name
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:14:13-54
+category#android.intent.category.LAUNCHER
+ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:15:5-65
+	android:name
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml:15:15-62
+uses-sdk
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+MERGED from [:android-pdf-viewer] /Users/arnaud/dev/Android/AndroidPdfViewer/android-pdf-viewer/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:android-pdf-viewer] /Users/arnaud/dev/Android/AndroidPdfViewer/android-pdf-viewer/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4d81424c2b6a3f4430b08e6e0a567863/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4d81424c2b6a3f4430b08e6e0a567863/AndroidManifest.xml:20:5-44
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5cac573a5786a500385af5b061d783fc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5cac573a5786a500385af5b061d783fc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/939fa1c2e4144cec81ad70caa570af10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/939fa1c2e4144cec81ad70caa570af10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1f478259edecbc666c31901e94efb584/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1f478259edecbc666c31901e94efb584/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d24fab4d20fc0725772f0a7ae9a72b4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d24fab4d20fc0725772f0a7ae9a72b4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/989205c66efe895c30eb45df5dfa67e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/989205c66efe895c30eb45df5dfa67e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e7f065e29cd5135c5264f23baf986fa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e7f065e29cd5135c5264f23baf986fa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d4282899e696e0826ff54c3be221cbeb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d4282899e696e0826ff54c3be221cbeb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:viewpager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/40015f5ac247ce01d40f909865ab46c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/40015f5ac247ce01d40f909865ab46c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5841243d8337e01a542e47609478c16b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5841243d8337e01a542e47609478c16b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/515dab5889b1284b71366087a226a823/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/515dab5889b1284b71366087a226a823/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/2dca0c778f8a95870e0aeedbaa08c50f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/2dca0c778f8a95870e0aeedbaa08c50f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5c12dbc155f762cc82dfd850d32ed7c8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/5c12dbc155f762cc82dfd850d32ed7c8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/076083cc857f3a1383fe19ed6f4eb4da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/076083cc857f3a1383fe19ed6f4eb4da/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/a4f70e4a834fb70898e3add8b4cee4a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/a4f70e4a834fb70898e3add8b4cee4a6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e1f55a2d0ebc70894b8d34c3ac365f22/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e1f55a2d0ebc70894b8d34c3ac365f22/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cdb1ae8c52b9868ec58eb308d87f9049/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cdb1ae8c52b9868ec58eb308d87f9049/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/87cc3b17e21ad2208b5d45f6f108c9fc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/87cc3b17e21ad2208b5d45f6f108c9fc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e3d4cdcef9f54f79ef913aac32ff08ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e3d4cdcef9f54f79ef913aac32ff08ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e65f20a3c629e4127c73834db9686593/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e65f20a3c629e4127c73834db9686593/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f098de611e34224fdcc6053f056c0f62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f098de611e34224fdcc6053f056c0f62/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/c559057e5ce6da23b2d9e63c5ca0fd9e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/c559057e5ce6da23b2d9e63c5ca0fd9e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e885d62bb618ea211213cad75a8a3681/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e885d62bb618ea211213cad75a8a3681/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f10ab8848d898e38deefd114f2e4097d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/f10ab8848d898e38deefd114f2e4097d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cacaf791e8fe3ce16eae48714b3acf7b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/cacaf791e8fe3ce16eae48714b3acf7b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1155888930b61ff4a576187f323abe05/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/1155888930b61ff4a576187f323abe05/AndroidManifest.xml:20:5-44
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		ADDED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+		INJECTED from /Users/arnaud/dev/Android/AndroidPdfViewer/sample/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/7e3785b8fb3d35256a9bfefa4da74068/AndroidManifest.xml:27:13-51
