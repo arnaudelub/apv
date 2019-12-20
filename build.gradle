@@ -1,5 +1,29 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
 plugins {
+    id("java")
     id("maven-publish")
+}
+
+group 'com.github.arnaudelub'
+archivesBaseName = 'apv'
+version '1.0.0'
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
 }
 
 publishing {
@@ -19,21 +43,4 @@ publishing {
         }
     }
 }
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-    }
-}
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
