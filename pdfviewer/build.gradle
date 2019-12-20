@@ -4,14 +4,14 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'pdfviewer'
 
-    publishedGroupId = 'com.github.barteksc'
+    publishedGroupId = 'com.github.arnaudelub'
     libraryName = 'apv'
     artifact = 'pdfviewer'
 
     libraryDescription = 'Android view for displaying PDFs rendered with PdfiumAndroid'
 
-    siteUrl = 'https://github.com/arnaudelub/AndroidPdfViewer'
-    gitUrl = 'https://github.com/arnaudelub/AndroidPdfViewer.git'
+    siteUrl = 'https://github.com/arnaudelub/apv'
+    gitUrl = 'https://github.com/arnaudelub/apv.git'
 
     libraryVersion = '1.0.0'
 

@@ -17,16 +17,16 @@ package com.github.arnaudelub.pdfviewer;
 
 import android.graphics.RectF;
 
-import com.github.barteksc.pdfviewer.util.Constants;
-import com.github.barteksc.pdfviewer.util.MathUtils;
-import com.github.barteksc.pdfviewer.util.Util;
+import com.github.arnaudelub.pdfviewer.util.Constants;
+import com.github.arnaudelub.pdfviewer.util.MathUtils;
+import com.github.arnaudelub.pdfviewer.util.Util;
 import com.shockwave.pdfium.util.SizeF;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.github.barteksc.pdfviewer.util.Constants.Cache.CACHE_SIZE;
-import static com.github.barteksc.pdfviewer.util.Constants.PRELOAD_OFFSET;
+import static com.github.arnaudelub.pdfviewer.util.Constants.Cache.CACHE_SIZE;
+import static com.github.arnaudelub.pdfviewer.util.Constants.PRELOAD_OFFSET;
 
 class PagesLoader {
 

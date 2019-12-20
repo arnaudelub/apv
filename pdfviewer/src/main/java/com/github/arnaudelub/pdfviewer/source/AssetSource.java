@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.barteksc.pdfviewer.source;
+package com.github.arnaudelub.pdfviewer.source;
 
 
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
 
-import com.github.barteksc.pdfviewer.util.FileUtils;
+import com.github.arnaudelub.pdfviewer.util.FileUtils;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
 

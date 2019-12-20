@@ -1,4 +1,4 @@
-#Wed Dec 18 12:51:48 CET 2019
-base.0=/Users/arnaud/dev/Android/AndroidPdfViewer/sample/build/intermediates/dex/debug/mergeDexDebug/out
+#Fri Dec 20 09:26:52 CET 2019
+base.0=/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

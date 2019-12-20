@@ -1,1 +1,0 @@
-[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkData":{"type":"MAIN","splits":[],"versionCode":3,"versionName":"3.0.0","enabled":true,"outputFile":"sample-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"com.github.barteksc.sample","split":"","minSdkVersion":"14"}}]

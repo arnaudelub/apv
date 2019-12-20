@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/arnaud/dev/Android/AndroidPdfViewer/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/4d81424c2b6a3f4430b08e6e0a567863/res/values-v24/values-v24.xml",
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/e11f595f274f32633185830398165a38/appcompat-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/084832c8112febb464db63a8d94fc8c1/res/values-v24/values-v24.xml",
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/3a35e6965f966acb45cbcc0824933a34/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

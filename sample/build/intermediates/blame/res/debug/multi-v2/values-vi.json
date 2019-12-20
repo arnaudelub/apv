@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/arnaud/dev/Android/AndroidPdfViewer/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/1e3694d3a83e351c76941bb50e5e311e/res/values-vi/values-vi.xml",
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/fa516f8222cc4d1bc15fa4cb58d08d6d/core-1.0.0/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/4d81424c2b6a3f4430b08e6e0a567863/res/values-vi/values-vi.xml",
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/e11f595f274f32633185830398165a38/appcompat-1.0.0/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

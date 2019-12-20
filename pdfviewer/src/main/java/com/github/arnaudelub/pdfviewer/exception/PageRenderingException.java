@@ -1,4 +1,4 @@
-package com.github.barteksc.pdfviewer.exception;
+package com.github.arnaudelub.pdfviewer.exception;
 
 public class PageRenderingException extends Exception {
     private final int page;

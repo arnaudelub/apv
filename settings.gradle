@@ -1,2 +1,3 @@
 include ':pdfviewer'
-rootProject.name='apv'
+include ':sample'
+

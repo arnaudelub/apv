@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.barteksc.pdfviewer.listener;
+package com.github.arnaudelub.pdfviewer.listener;
 
 /**
  * Implements this interface to receive events from PDFView
@@ -25,7 +25,7 @@ public interface OnPageScrollListener {
      * Called on every move while scrolling
      *
      * @param page current page index
-     * @param positionOffset see {@link com.github.barteksc.pdfviewer.PDFView#getPositionOffset()}
+     * @param positionOffset see {@link com.github.arnaudelub.pdfviewer.PDFView#getPositionOffset()}
      */
     void onPageScrolled(int page, float positionOffset);
 }

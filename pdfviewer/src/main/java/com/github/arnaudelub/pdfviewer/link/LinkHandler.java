@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.barteksc.pdfviewer.link;
+package com.github.arnaudelub.pdfviewer.link;
 
-import com.github.barteksc.pdfviewer.model.LinkTapEvent;
+import com.github.arnaudelub.pdfviewer.model.LinkTapEvent;
 
 public interface LinkHandler {
 

@@ -177,6 +177,10 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="subtitle_corner_radius">2dp</dimen>
+    <dimen name="subtitle_outline_width">2dp</dimen>
+    <dimen name="subtitle_shadow_offset">2dp</dimen>
+    <dimen name="subtitle_shadow_radius">2dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -248,7 +252,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">AndroidPdfViewer demo</string>
+    <string name="app_name">Android pdf visor demo</string>
     <string name="pick_file">Pick file</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -581,7 +585,7 @@
         <item name="isLightTheme">true</item>
     </style>
     <style name="Base.V7.Theme.AppCompat" parent="Platform.AppCompat">
-        <item name="viewInflaterClass">android.support.v7.app.AppCompatViewInflater</item>
+        <item name="viewInflaterClass">androidx.appcompat.app.AppCompatViewInflater</item>
         <item name="windowNoTitle">false</item>
         <item name="windowActionBar">true</item>
         <item name="windowActionBarOverlay">false</item>
@@ -775,7 +779,7 @@
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
     <style name="Base.V7.Theme.AppCompat.Light" parent="Platform.AppCompat.Light">
-        <item name="viewInflaterClass">android.support.v7.app.AppCompatViewInflater</item>
+        <item name="viewInflaterClass">androidx.appcompat.app.AppCompatViewInflater</item>
 
         <item name="windowNoTitle">false</item>
         <item name="windowActionBar">true</item>
@@ -2901,12 +2905,6 @@
         <attr format="dimension" name="paddingBottomNoButtons"/>
         <!-- Top padding to use when no title is present. -->
         <attr format="dimension" name="paddingTopNoTitle"/>
-    </declare-styleable>
-    <declare-styleable name="ScrollBar">
-        <attr format="color|reference" name="sb_handlerColor"/>
-        <attr format="color|reference" name="sb_indicatorColor"/>
-        <attr format="color|reference" name="sb_indicatorTextColor"/>
-        <attr format="boolean|reference" name="sb_horizontal"/>
     </declare-styleable>
     <declare-styleable name="SearchView">
         <!-- The layout to use for the search view. -->

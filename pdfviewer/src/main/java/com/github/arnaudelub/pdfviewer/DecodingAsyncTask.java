@@ -17,7 +17,7 @@ package com.github.arnaudelub.pdfviewer;
 
 import android.os.AsyncTask;
 
-import com.github.barteksc.pdfviewer.source.DocumentSource;
+import com.github.arnaudelub.pdfviewer.source.DocumentSource;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
 import com.shockwave.pdfium.util.Size;

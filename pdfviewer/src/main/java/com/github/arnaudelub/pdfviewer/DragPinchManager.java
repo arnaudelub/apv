@@ -22,14 +22,14 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 
-import com.github.barteksc.pdfviewer.model.LinkTapEvent;
-import com.github.barteksc.pdfviewer.scroll.ScrollHandle;
-import com.github.barteksc.pdfviewer.util.SnapEdge;
+import com.github.arnaudelub.pdfviewer.model.LinkTapEvent;
+import com.github.arnaudelub.pdfviewer.scroll.ScrollHandle;
+import com.github.arnaudelub.pdfviewer.util.SnapEdge;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.util.SizeF;
 
-import static com.github.barteksc.pdfviewer.util.Constants.Pinch.MAXIMUM_ZOOM;
-import static com.github.barteksc.pdfviewer.util.Constants.Pinch.MINIMUM_ZOOM;
+import static com.github.arnaudelub.pdfviewer.util.Constants.Pinch.MAXIMUM_ZOOM;
+import static com.github.arnaudelub.pdfviewer.util.Constants.Pinch.MINIMUM_ZOOM;
 
 /**
  * This Manager takes care of moving the PDFView,

@@ -16,7 +16,6 @@
 package com.github.arnaudelub.pdfviewer;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -25,8 +24,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-import com.github.barteksc.pdfviewer.exception.PageRenderingException;
-import com.github.barteksc.pdfviewer.model.PagePart;
+import com.github.arnaudelub.pdfviewer.exception.PageRenderingException;
+import com.github.arnaudelub.pdfviewer.model.PagePart;
 
 /**
  * A {@link Handler} that will process incoming {@link RenderingTask} messages
