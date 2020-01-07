@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/pdfviewer/local.properties
+local.properties

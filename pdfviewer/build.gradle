@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'pdfviewer'
+    bintrayRepo = 'apv'
+    bintrayName = 'com.github.arnaudelub.apv'
 
-    publishedGroupId = 'com.github.arnaudelub'
+    publishedGroupId = 'com.github.arnaudelub.apv'
     libraryName = 'apv'
-    artifact = 'pdfviewer'
+    artifact = 'apv'
 
     libraryDescription = 'Android view for displaying PDFs rendered with PdfiumAndroid'
 
@@ -15,7 +15,7 @@ ext {
 
     libraryVersion = '1.0.0'
 
-    developerId = 'aranudelub'
+    developerId = 'arnudelub'
     developerName = 'Arnaud Delubac'
     developerEmail = 'arnaudelub@gmail.com'
 
@@ -39,6 +39,15 @@ android {
 dependencies {
     implementation 'com.android.support:support-compat:28.0.0'
     api 'com.github.barteksc:pdfium-android:1.9.0'
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+repositories {
+    mavenCentral()
 }
 
 apply from: 'bintray.gradle'
+if(project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+}

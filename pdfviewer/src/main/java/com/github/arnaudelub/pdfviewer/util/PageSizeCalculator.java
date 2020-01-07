@@ -43,13 +43,16 @@ public class PageSizeCalculator {
         calculateMaxPages();
     }
 
-    public SizeF calculate(Size pageSize, boolean showTwoPages, boolean isLandscape) {
+    public SizeF calculate(Size pageSize, boolean showTwoPages, boolean isLandscape, int pageIndex) {
+        Log.d("PAGE INDEX", String.format("Page number is %d, dual is %b, isLandscape is %b", pageIndex, showTwoPages, isLandscape));
         if (pageSize.getWidth() <= 0 || pageSize.getHeight() <= 0) {
             return new SizeF(0, 0);
         }
         float maxWidth = 0;
-        if(showTwoPages && !isLandscape){
-           maxWidth = fitEachPage ? viewSize.getWidth()  : pageSize.getWidth() / 2 * widthRatio;
+        if(showTwoPages && !isLandscape && pageIndex != 0) {
+            maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() / 2 * widthRatio;
+        } else if (showTwoPages && !isLandscape && pageIndex == 0){
+            maxWidth = viewSize.getWidth();
         } else {
             maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() * widthRatio;
         }

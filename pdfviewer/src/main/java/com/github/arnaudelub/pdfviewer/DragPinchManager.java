@@ -130,7 +130,13 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
         float offsetX = pdfView.getCurrentXOffset() - delta * pdfView.getZoom();
         float offsetY = pdfView.getCurrentYOffset() - delta * pdfView.getZoom();
         int startingPage = pdfView.findFocusPage(offsetX, offsetY);
-        int targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + direction));
+        int targetPage = 0;
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == -1){
+            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage - 3));
+        }else{
+            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + direction));
+        }
+
 
         SnapEdge edge = pdfView.findSnapEdge(targetPage);
         float offset = pdfView.snapOffsetForPage(targetPage, edge);

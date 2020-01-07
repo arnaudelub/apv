@@ -130,6 +130,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .dualPageMode(true)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .spacing(0) // in dp
+                .autoSpacing(false)
                 .enableSwipe(true)
                 .swipeHorizontal(true)
                 .pageFling(true)
@@ -137,6 +138,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .onPageError(this)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load();
+
+
     }
 
     private void displayFromUri(Uri uri) {
@@ -149,7 +152,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .onLoad(this)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .spacing(0) // in dp
-                .dualPageMode(true)
+                .dualPageMode(false)
                 .enableSwipe(true)
                 .swipeHorizontal(true)
                 .pageFling(true)
@@ -204,6 +207,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
         Log.e(TAG, "modDate = " + meta.getModDate());
 
         printBookmarksTree(pdfView.getTableOfContents(), "-");
+        Log.d("TAG", "$pdfView.isOnDualPageMode() => " + pdfView.isOnDualPageMode());
+        Log.d("TAG", "$pdfView.isOnLandscapeOrientation() => " + pdfView.isOnLandscapeOrientation());
 
     }
 

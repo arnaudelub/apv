@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import androidx.core.content.ContextCompat;
+
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
@@ -150,6 +152,7 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
             viewSize = getHeight();
             pdfViewSize = pdfView.getHeight();
         } else if (pdfView.isOnDualPageMode()){
+            Log.d("CURRENT page: ", String.format("%d" , pdfView.getCurrentPage()));
             pos = getX();
             viewSize = getWidth() / 2;
             pdfViewSize = pdfView.getWidth() / 2;

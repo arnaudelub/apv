@@ -18,6 +18,7 @@ package com.github.arnaudelub.pdfviewer;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import com.github.arnaudelub.pdfviewer.exception.PageRenderingException;
@@ -128,9 +129,9 @@ class PdfFile {
         maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
 
         for (Size size : originalPageSizes) {
-            pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape));
+            pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape, originalPageSizes.indexOf(size)));
         }
-        if (autoSpacing) {
+        if (autoSpacing || showTwoPages) {
             prepareAutoSpacing(viewSize);
         }
         prepareDocLen();
@@ -173,14 +174,23 @@ class PdfFile {
 
     private void prepareAutoSpacing(Size viewSize) {
         pageSpacing.clear();
+        SizeF pageSize;
+        float spacing;
         for (int i = 0; i < getPagesCount(); i++) {
-            SizeF pageSize = pageSizes.get(i);
-            float spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
+            pageSize = pageSizes.get(i);
+            spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
                     viewSize.getWidth() - pageSize.getWidth());
             if (i < getPagesCount() - 1) {
                 spacing += spacingPx;
             }
-            pageSpacing.add(spacing);
+            if(showTwoPages && i == 0) {
+                pageSpacing.add(spacing);
+            } else if (showTwoPages) {
+                pageSpacing.add((float) 0);
+            }else {
+                pageSpacing.add(spacing);
+            }
+
         }
     }
 
@@ -189,7 +199,7 @@ class PdfFile {
         for (int i = 0; i < getPagesCount(); i++) {
             SizeF pageSize = pageSizes.get(i);
             length += isVertical ? pageSize.getHeight() : pageSize.getWidth();
-            if (autoSpacing) {
+            if (autoSpacing || showTwoPages) {
                 length += pageSpacing.get(i);
             } else if (i < getPagesCount() - 1) {
                 length += spacingPx;
@@ -204,7 +214,7 @@ class PdfFile {
         for (int i = 0; i < getPagesCount(); i++) {
             SizeF pageSize = pageSizes.get(i);
             float size = isVertical ? pageSize.getHeight() : pageSize.getWidth();
-            if (autoSpacing) {
+            if (autoSpacing || showTwoPages) {
                 offset += pageSpacing.get(i) / 2f;
                 if (i == 0) {
                     offset -= spacingPx / 2f;
