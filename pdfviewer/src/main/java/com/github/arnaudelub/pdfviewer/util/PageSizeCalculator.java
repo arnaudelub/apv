@@ -44,18 +44,13 @@ public class PageSizeCalculator {
     }
 
     public SizeF calculate(Size pageSize, boolean showTwoPages, boolean isLandscape, int pageIndex) {
-        Log.d("PAGE INDEX", String.format("Page number is %d, dual is %b, isLandscape is %b", pageIndex, showTwoPages, isLandscape));
+        Log.d("SIZES", String.format("This is the pagesize %d w %d h , this is the viewSize %d w %d h",pageSize.getWidth(), pageSize.getHeight(), viewSize.getWidth(), viewSize.getHeight() ) );
+
         if (pageSize.getWidth() <= 0 || pageSize.getHeight() <= 0) {
             return new SizeF(0, 0);
         }
         float maxWidth = 0;
-        if(showTwoPages && !isLandscape && pageIndex != 0) {
-            maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() / 2 * widthRatio;
-        } else if (showTwoPages && !isLandscape && pageIndex == 0){
-            maxWidth = viewSize.getWidth();
-        } else {
-            maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() * widthRatio;
-        }
+        maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() * widthRatio;
         float maxHeight = fitEachPage ? viewSize.getHeight() : pageSize.getHeight() * heightRatio;
         switch (fitPolicy) {
             case HEIGHT:
@@ -124,6 +119,7 @@ public class PageSizeCalculator {
             h = maxHeight;
             w = (float) Math.floor(maxHeight * ratio);
         }
+
         return new SizeF(w, h);
     }
 

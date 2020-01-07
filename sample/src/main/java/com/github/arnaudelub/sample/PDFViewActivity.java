@@ -130,11 +130,11 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .dualPageMode(true)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .spacing(0) // in dp
-                .autoSpacing(false)
+                .autoSpacing(true)
                 .enableSwipe(true)
                 .swipeHorizontal(true)
                 .pageFling(true)
-                .fitEachPage(false)
+                .fitEachPage(true)
                 .onPageError(this)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load();
