@@ -380,6 +380,10 @@ public class PDFView extends RelativeLayout {
         return pdfFile.getPagesCount();
     }
 
+    public double getPdfPageWidth(int page) {
+        return getPageSize(page).getWidth();
+    }
+
     public void setSwipeEnabled(boolean enableSwipe) {
         this.enableSwipe = enableSwipe;
     }
