@@ -128,7 +128,6 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
             pdfViewSize = pdfView.getWidth();
         }
         pos -= relativeHandlerMiddle;
-
         if (pos < 0) {
             pos = 0;
         } else if (pos > pdfViewSize - Util.getDP(context, HANDLE_SHORT)) {
@@ -151,11 +150,10 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
             pos = getY();
             viewSize = getHeight();
             pdfViewSize = pdfView.getHeight();
-        } else if (pdfView.isOnDualPageMode()){
-            Log.d("CURRENT page: ", String.format("%d" , pdfView.getCurrentPage()));
+        } else if (pdfView.isOnDualPageMode() && pdfView.isOnLandscapeOrientation()){
             pos = getX();
-            viewSize = getWidth() / 2;
-            pdfViewSize = pdfView.getWidth() / 2;
+            viewSize = getWidth();
+            pdfViewSize = pdfView.getWidth();
         } else  {
             pos = getX();
             viewSize = getWidth();
@@ -209,7 +207,6 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
         if (!isPDFViewReady()) {
             return super.onTouchEvent(event);
         }

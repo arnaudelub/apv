@@ -126,6 +126,9 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .onPageChange(this)
                 .enableAnnotationRendering(true)
                 .onLoad(this)
+                .pageSnap(false)
+                .nightMode(false)
+                .enableAntialiasing(false)
                 .landscapeOrientation(isLandscape)
                 .dualPageMode(true)
                 .scrollHandle(new DefaultScrollHandle(this))
@@ -134,7 +137,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .enableSwipe(true)
                 .swipeHorizontal(true)
                 .pageFling(true)
-                .fitEachPage(true)
+                .fitEachPage(false)
                 .onPageError(this)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load();

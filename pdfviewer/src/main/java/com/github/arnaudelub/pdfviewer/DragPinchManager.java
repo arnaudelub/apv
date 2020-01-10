@@ -17,6 +17,7 @@ package com.github.arnaudelub.pdfviewer;
 
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -130,16 +131,32 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
         float offsetX = pdfView.getCurrentXOffset() - delta * pdfView.getZoom();
         float offsetY = pdfView.getCurrentYOffset() - delta * pdfView.getZoom();
         int startingPage = pdfView.findFocusPage(offsetX, offsetY);
+        Log.d("PAGE", String.format("Startingpage: %d", startingPage));
         int targetPage = 0;
-        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == -1){
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == -1 && startingPage != 1){
             targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage - 3));
+        }else if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == 1 && startingPage != 0){
+            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + 1));
         }else{
+            Log.d("PAGE", String.format("Startingpage: %d with normal FLING", startingPage));
             targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + direction));
+            Log.d("PAGE", String.format("targetPage: %d with normal FLING", targetPage));
         }
 
 
         SnapEdge edge = pdfView.findSnapEdge(targetPage);
         float offset = pdfView.snapOffsetForPage(targetPage, edge);
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 3 && direction == -1){
+            offset += pdfView.getPageSize(targetPage).getWidth()*1.5;
+        }else
+            if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 1 && direction == -1){
+            offset -= pdfView.getPageSize(targetPage).getWidth()*1.5;
+        }else
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage != 0){
+            offset += pdfView.getPageSize(targetPage).getWidth()/2;
+        }else if (pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 0){
+            offset -= pdfView.getPageSize(targetPage).getWidth()/2;
+        }
         animationManager.startPageFlingAnimation(-offset);
     }
 
@@ -207,6 +224,7 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        Log.d("FLING", "Flingin");
         if (!pdfView.isSwipeEnabled()) {
             return false;
         }
@@ -225,6 +243,7 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
         float minX, minY;
         PdfFile pdfFile = pdfView.pdfFile;
         if (pdfView.isSwipeVertical()) {
+
             minX = -(pdfView.toCurrentScale(pdfFile.getMaxPageWidth()) - pdfView.getWidth());
             minY = -(pdfFile.getDocLen(pdfView.getZoom()) - pdfView.getHeight());
         } else {

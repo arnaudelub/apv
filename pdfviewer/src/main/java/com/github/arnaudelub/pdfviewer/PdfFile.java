@@ -1,16 +1,14 @@
 /**
  * Copyright 2017 Bartosz Schiller
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
 package com.github.arnaudelub.pdfviewer;
@@ -18,9 +16,7 @@ package com.github.arnaudelub.pdfviewer;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.util.Log;
 import android.util.SparseBooleanArray;
-
 import com.github.arnaudelub.pdfviewer.exception.PageRenderingException;
 import com.github.arnaudelub.pdfviewer.util.FitPolicy;
 import com.github.arnaudelub.pdfviewer.util.PageSizeCalculator;
@@ -28,7 +24,6 @@ import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
 import com.shockwave.pdfium.util.Size;
 import com.shockwave.pdfium.util.SizeF;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +47,7 @@ class PdfFile {
     private SizeF maxHeightPageSize = new SizeF(0, 0);
     /** Scaled page with maximum width */
     private SizeF maxWidthPageSize = new SizeF(0, 0);
-    /** True if dualPageMode is on*/
+    /** True if dualPageMode is on */
     private boolean showTwoPages;
     /** True if scrolling is vertical, else it's horizontal */
     private boolean isVertical;
@@ -66,22 +61,30 @@ class PdfFile {
     private List<Float> pageSpacing = new ArrayList<>();
     /** Calculated document length (width or height, depending on swipe mode) */
     private float documentLength = 0;
+
     private final FitPolicy pageFitPolicy;
     /**
-     * True if every page should fit separately according to the FitPolicy,
-     * else the largest page fits and other pages scale relatively
+     * True if every page should fit separately according to the FitPolicy, else the largest page fits
+     * and other pages scale relatively
      */
     private final boolean fitEachPage;
 
     private final boolean isLandscape;
-    /**
-     * The pages the user want to display in order
-     * (ex: 0, 2, 2, 8, 8, 1, 1, 1)
-     */
+    /** The pages the user want to display in order (ex: 0, 2, 2, 8, 8, 1, 1, 1) */
     private int[] originalUserPages;
 
-    PdfFile(PdfiumCore pdfiumCore, PdfDocument pdfDocument, FitPolicy pageFitPolicy, Size viewSize, int[] originalUserPages,
-            boolean showTwoPages, boolean isVertical, int spacing, boolean autoSpacing, boolean fitEachPage, boolean isLandscape) {
+    PdfFile(
+            PdfiumCore pdfiumCore,
+            PdfDocument pdfDocument,
+            FitPolicy pageFitPolicy,
+            Size viewSize,
+            int[] originalUserPages,
+            boolean showTwoPages,
+            boolean isVertical,
+            int spacing,
+            boolean autoSpacing,
+            boolean fitEachPage,
+            boolean isLandscape) {
         this.showTwoPages = showTwoPages;
         this.pdfiumCore = pdfiumCore;
         this.pdfDocument = pdfDocument;
@@ -93,7 +96,7 @@ class PdfFile {
         this.fitEachPage = fitEachPage;
         this.isLandscape = isLandscape;
         setup(viewSize);
-    }
+            }
 
     private void setup(Size viewSize) {
         if (originalUserPages != null) {
@@ -123,13 +126,19 @@ class PdfFile {
      */
     public void recalculatePageSizes(Size viewSize) {
         pageSizes.clear();
-        PageSizeCalculator calculator = new PageSizeCalculator(pageFitPolicy, originalMaxWidthPageSize,
-                originalMaxHeightPageSize, viewSize, fitEachPage);
+        PageSizeCalculator calculator =
+            new PageSizeCalculator(
+                    pageFitPolicy,
+                    originalMaxWidthPageSize,
+                    originalMaxHeightPageSize,
+                    viewSize,
+                    fitEachPage);
         maxWidthPageSize = calculator.getOptimalMaxWidthPageSize();
         maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
 
         for (Size size : originalPageSizes) {
-            pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape, originalPageSizes.indexOf(size)));
+            pageSizes.add(
+                    calculator.calculate(size, showTwoPages, isLandscape, originalPageSizes.indexOf(size)));
         }
         if (autoSpacing || showTwoPages) {
             prepareAutoSpacing(viewSize);
@@ -178,19 +187,22 @@ class PdfFile {
         float spacing;
         for (int i = 0; i < getPagesCount(); i++) {
             pageSize = pageSizes.get(i);
-            spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
-                    viewSize.getWidth() - pageSize.getWidth());
+            spacing =
+                Math.max(
+                        0,
+                        isVertical
+                        ? viewSize.getHeight() - pageSize.getHeight()
+                        : viewSize.getWidth() - pageSize.getWidth());
             if (i < getPagesCount() - 1) {
                 spacing += spacingPx;
             }
-            if(showTwoPages && i == 0) {
+            if (showTwoPages && (i == 0 || i == getPagesCount() - 1)) {
                 pageSpacing.add(spacing);
             } else if (showTwoPages) {
                 pageSpacing.add((float) 0);
-            }else {
+            } else {
                 pageSpacing.add(spacing);
             }
-
         }
     }
 
@@ -234,9 +246,7 @@ class PdfFile {
         return documentLength * zoom;
     }
 
-    /**
-     * Get the page's height if swiping vertical, or width if swiping horizontal.
-     */
+    /** Get the page's height if swiping vertical, or width if swiping horizontal. */
     public float getPageLength(int pageIndex, float zoom) {
         SizeF size = getPageSize(pageIndex);
         return (isVertical ? size.getHeight() : size.getWidth()) * zoom;
@@ -261,10 +271,10 @@ class PdfFile {
         SizeF pageSize = getPageSize(pageIndex);
         if (isVertical) {
             float maxWidth = getMaxPageWidth();
-            return zoom * (maxWidth - pageSize.getWidth()) / 2; //x
+            return zoom * (maxWidth - pageSize.getWidth()) / 2; // x
         } else {
             float maxHeight = getMaxPageHeight();
-            return zoom * (maxHeight - pageSize.getHeight()) / 2; //y
+            return zoom * (maxHeight - pageSize.getHeight()) / 2; // y
         }
     }
 
@@ -306,11 +316,19 @@ class PdfFile {
         return !openedPages.get(docPage, false);
     }
 
-    public void renderPageBitmap(Bitmap bitmap, int pageIndex, Rect bounds, boolean annotationRendering) {
+    public void renderPageBitmap(
+            Bitmap bitmap, int pageIndex, Rect bounds, boolean annotationRendering) {
         int docPage = documentPage(pageIndex);
-        pdfiumCore.renderPageBitmap(pdfDocument, bitmap, docPage,
-                bounds.left, bounds.top, bounds.width(), bounds.height(), annotationRendering);
-    }
+        pdfiumCore.renderPageBitmap(
+                pdfDocument,
+                bitmap,
+                docPage,
+                bounds.left,
+                bounds.top,
+                bounds.width(),
+                bounds.height(),
+                annotationRendering);
+            }
 
     public PdfDocument.Meta getMetaData() {
         if (pdfDocument == null) {
@@ -331,11 +349,11 @@ class PdfFile {
         return pdfiumCore.getPageLinks(pdfDocument, docPage);
     }
 
-    public RectF mapRectToDevice(int pageIndex, int startX, int startY, int sizeX, int sizeY,
-                                 RectF rect) {
+    public RectF mapRectToDevice(
+            int pageIndex, int startX, int startY, int sizeX, int sizeY, RectF rect) {
         int docPage = documentPage(pageIndex);
         return pdfiumCore.mapRectToDevice(pdfDocument, docPage, startX, startY, sizeX, sizeY, 0, rect);
-    }
+            }
 
     public void dispose() {
         if (pdfiumCore != null && pdfDocument != null) {
@@ -347,9 +365,8 @@ class PdfFile {
     }
 
     /**
-     * Given the UserPage number, this method restrict it
-     * to be sure it's an existing page. It takes care of
-     * using the user defined pages if any.
+     * Given the UserPage number, this method restrict it to be sure it's an existing page. It takes
+     * care of using the user defined pages if any.
      *
      * @param userPage A page number.
      * @return A restricted valid page number (example : -2 => 0)
