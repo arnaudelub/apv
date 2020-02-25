@@ -1247,7 +1247,7 @@ public class PDFView extends RelativeLayout {
     return pageFitPolicy;
   }
 
-  private void setFitEachPage(boolean fitEachPage) {
+  public void setFitEachPage(boolean fitEachPage) {
     this.fitEachPage = fitEachPage;
   }
 

@@ -1,0 +1,1 @@
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkData":{"type":"MAIN","splits":[],"versionCode":3,"versionName":"3.0.0","enabled":true,"outputFile":"sample-release-unsigned.apk","fullName":"release","baseName":"release"},"path":"AndroidManifest.xml","properties":{"packageId":"com.github.arnaudelub.sample","split":"","minSdkVersion":"14"}}]
