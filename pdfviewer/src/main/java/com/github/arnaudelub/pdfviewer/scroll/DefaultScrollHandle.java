@@ -159,6 +159,7 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
             viewSize = getWidth();
             pdfViewSize = pdfView.getWidth();
         }
+
         relativeHandlerMiddle = ((pos + relativeHandlerMiddle) / pdfViewSize) * viewSize;
     }
 

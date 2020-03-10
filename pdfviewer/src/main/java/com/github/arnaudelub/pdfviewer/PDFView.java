@@ -279,19 +279,15 @@ public class PDFView extends RelativeLayout {
    * Go to the given page.
    *
    * @param page Page index.
+   * @param withAnimation
    */
   public void jumpTo(int page, boolean withAnimation) {
-    Log.d("PDFView", String.format("Jump to page %d", page));
     if (pdfFile == null) {
       return;
     }
 
     page = pdfFile.determineValidPageNumberFrom(page);
     float offset = page == 0 ? 0 : -pdfFile.getPageOffset(page, zoom);
-    if(isOnDualPageMode() && isOnLandscapeOrientation()){
-      offset += getPageSize(page).getWidth()/2f;
-    }
-    Log.d("PDFView", String.format("Jump to page at offset %f", offset));
     if (swipeVertical) {
       if (withAnimation) {
         animationManager.startYAnimation(currentYOffset, offset);
@@ -356,7 +352,14 @@ public class PDFView extends RelativeLayout {
     if (swipeVertical) {
       moveTo(currentXOffset, (-pdfFile.getDocLen(zoom) + getHeight()) * progress, moveHandle);
     } else {
-      moveTo((-pdfFile.getDocLen(zoom) + getWidth()) * progress, currentYOffset, moveHandle);
+
+      if(isLandscapeOrientation && dualPageMode){
+          int pageNum = getCurrentPage();
+          float pdfWidth = getPageSize(pageNum).getWidth();
+        moveTo((-pdfFile.getDocLen(zoom) + getWidth() -pdfWidth/2f) * progress, currentYOffset, moveHandle);
+      }else {
+        moveTo((-pdfFile.getDocLen(zoom) + getWidth()) * progress, currentYOffset, moveHandle);
+      }
     }
     loadPageByOffset();
   }
@@ -939,7 +942,13 @@ public class PDFView extends RelativeLayout {
     if (swipeVertical) {
       animationManager.startYAnimation(currentYOffset, -offset);
     } else {
-      animationManager.startXAnimation(currentXOffset, -offset);
+      if(isLandscapeOrientation && dualPageMode) {
+        int pageNum = getCurrentPage();
+        float pdfWidth = getPageSize(pageNum).getWidth();
+        animationManager.startXAnimation(currentXOffset, -(offset + (pdfWidth / 2)));
+      }else{
+        animationManager.startXAnimation(currentXOffset, -offset);
+      }
     }
   }
 
@@ -1016,7 +1025,10 @@ public class PDFView extends RelativeLayout {
     moveTo(currentXOffset + dx, currentYOffset + dy);
   }
 
-  /** Change the zoom level */
+  /** Change the zoom level
+   *
+   * @param zoom
+   * */
   public void zoomTo(float zoom) {
     this.zoom = zoom;
   }
@@ -1038,7 +1050,11 @@ public class PDFView extends RelativeLayout {
     moveTo(baseX, baseY);
   }
 
-  /** @see #zoomCenteredTo(float, PointF) */
+  /** @see #zoomCenteredTo(float, PointF)
+   *
+   * @param dzoom
+   * @param pivot
+   * */
   public void zoomCenteredRelativeTo(float dzoom, PointF pivot) {
     zoomCenteredTo(zoom * dzoom, pivot);
   }

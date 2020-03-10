@@ -5,7 +5,7 @@ INJECTED from /Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManife
 INJECTED from /Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:1:1-20:12
 MERGED from [:pdfviewer] /Users/arnaud/dev/Android/remake/apv/pdfviewer/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4f6d77becab5e7317492ceaab42956aa/appcompat-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d6321ed2dbf673504e1cb92a81209fa3/jetified-pdfium-android-1.9.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/35e6acd450a6909045dfa3509315fc5e/jetified-pdfium-android-1.9.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/509a32b3d94a759b3bcf2a9b59cb198b/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/bfdd755622e86748b2e04b84f416db3b/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/e68c03627af14bfd72e218ab55341c6f/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -89,8 +89,8 @@ MERGED from [:pdfviewer] /Users/arnaud/dev/Android/remake/apv/pdfviewer/build/in
 MERGED from [:pdfviewer] /Users/arnaud/dev/Android/remake/apv/pdfviewer/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4f6d77becab5e7317492ceaab42956aa/appcompat-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/4f6d77becab5e7317492ceaab42956aa/appcompat-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d6321ed2dbf673504e1cb92a81209fa3/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/d6321ed2dbf673504e1cb92a81209fa3/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/35e6acd450a6909045dfa3509315fc5e/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/35e6acd450a6909045dfa3509315fc5e/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/509a32b3d94a759b3bcf2a9b59cb198b/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/509a32b3d94a759b3bcf2a9b59cb198b/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/bfdd755622e86748b2e04b84f416db3b/fragment-1.0.0/AndroidManifest.xml:20:5-44
