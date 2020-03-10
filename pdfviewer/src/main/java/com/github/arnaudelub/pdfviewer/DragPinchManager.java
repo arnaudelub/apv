@@ -131,32 +131,40 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
         float offsetX = pdfView.getCurrentXOffset() - delta * pdfView.getZoom();
         float offsetY = pdfView.getCurrentYOffset() - delta * pdfView.getZoom();
         int startingPage = pdfView.findFocusPage(offsetX, offsetY);
+        int newPage = startingPage;
+        Log.d("PAGE", String.format("direction: %d", direction));
         Log.d("PAGE", String.format("Startingpage: %d", startingPage));
         int targetPage = 0;
-        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == -1 && startingPage != 1){
-            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage - 3));
-        }else if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == 1 && startingPage != 0){
-            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + 1));
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == -1 && startingPage != 1) {
+            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage - 2));
+            newPage -= 2;
+        }else if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == 1 && startingPage==0){
+                targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + 1));
+            newPage += 1;
+        }else if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && direction == 1 ){
+            targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + 2));
+            newPage += 2;
         }else{
-            Log.d("PAGE", String.format("Startingpage: %d with normal FLING", startingPage));
             targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + direction));
-            Log.d("PAGE", String.format("targetPage: %d with normal FLING", targetPage));
+            newPage -= direction;
         }
 
 
         SnapEdge edge = pdfView.findSnapEdge(targetPage);
         float offset = pdfView.snapOffsetForPage(targetPage, edge);
-        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 3 && direction == -1){
-            offset += pdfView.getPageSize(targetPage).getWidth()*1.5;
-        }else
-            if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 1 && direction == -1){
+        Log.d("PAGE", String.format("Offset before: %f", offset));
+
+        if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 1 && direction == -1){
             offset -= pdfView.getPageSize(targetPage).getWidth()*1.5;
         }else
         if(pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage != 0){
             offset += pdfView.getPageSize(targetPage).getWidth()/2;
         }else if (pdfView.isOnLandscapeOrientation() && pdfView.isOnDualPageMode() && startingPage == 0){
-            offset -= pdfView.getPageSize(targetPage).getWidth()/2;
+            offset += pdfView.getPageSize(targetPage).getWidth()/2;
         }
+        Log.d("PAGE", String.format("Offset after: %f", offset));
+        Log.d("PAGE", String.format("New page is: %d", newPage));
+
         animationManager.startPageFlingAnimation(-offset);
     }
 
