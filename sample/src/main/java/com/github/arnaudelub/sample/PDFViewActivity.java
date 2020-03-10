@@ -106,7 +106,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
     @AfterViews
     void afterViews() {
-        pdfView.setBackgroundColor(Color.LTGRAY);
+        //pdfView.setBackgroundColor(Color.BLACK);
         if (uri != null) {
             displayFromUri(uri);
         } else {
@@ -124,6 +124,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
         pdfView.fromAsset(SAMPLE_FILE)
                 .defaultPage(pageNumber)
                 .onPageChange(this)
+                .backgroundColor(Color.RED)
                 .enableAnnotationRendering(true)
                 .onLoad(this)
                 .pageSnap(true)

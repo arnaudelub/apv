@@ -169,6 +169,8 @@ public class PDFView extends RelativeLayout {
 
   private int defaultPage = 0;
 
+  private int backgroundColor = Color.WHITE;
+
   private boolean dualPageMode = false;
 
   private boolean isLandscapeOrientation = false;
@@ -728,6 +730,7 @@ public class PDFView extends RelativeLayout {
 
     if (Constants.DEBUG_MODE) {
       debugPaint.setColor(part.getPage() % 2 == 0 ? Color.RED : Color.BLUE);
+
       canvas.drawRect(dstRect, debugPaint);
     }
 
@@ -1191,6 +1194,11 @@ public class PDFView extends RelativeLayout {
     return isLandscapeOrientation;
   }
 
+  public void setBackGroundColor(int color) {
+    this.backgroundColor = color;
+    this.setBackgroundColor(this.backgroundColor);
+  }
+
   public void setLandscapeOrientation(boolean landscapeOrientation) {
     this.isLandscapeOrientation = landscapeOrientation;
   }
@@ -1381,6 +1389,8 @@ public class PDFView extends RelativeLayout {
 
     private int defaultPage = 0;
 
+    private int backgroundColor = Color.WHITE;
+
     private boolean landscapeOrientation = false;
 
     private boolean dualPageMode = false;
@@ -1498,6 +1508,11 @@ public class PDFView extends RelativeLayout {
       return this;
     }
 
+    public Configurator backgroundColor(int color) {
+      this.backgroundColor = color;
+      return this;
+    }
+
     public Configurator dualPageMode(boolean dualPageMode) {
       this.dualPageMode = dualPageMode;
       return this;
@@ -1586,6 +1601,7 @@ public class PDFView extends RelativeLayout {
       PDFView.this.setDefaultPage(defaultPage);
       PDFView.this.setLandscapeOrientation(landscapeOrientation);
       PDFView.this.setDualPageMode(dualPageMode);
+      PDFView.this.setBackGroundColor(backgroundColor);
       PDFView.this.setSwipeVertical(!swipeHorizontal);
       PDFView.this.enableAnnotationRendering(annotationRendering);
       PDFView.this.setScrollHandle(scrollHandle);
