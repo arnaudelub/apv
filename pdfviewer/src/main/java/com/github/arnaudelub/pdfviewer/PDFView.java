@@ -355,11 +355,14 @@ public class PDFView extends RelativeLayout {
       moveTo(currentXOffset, (-pdfFile.getDocLen(zoom) + getHeight()) * progress, moveHandle);
     } else {
 
-      if(isLandscapeOrientation && dualPageMode){
-          int pageNum = getCurrentPage();
-          float pdfWidth = getPageSize(pageNum).getWidth();
-        moveTo((-pdfFile.getDocLen(zoom) + getWidth() -pdfWidth/2f) * progress, currentYOffset, moveHandle);
-      }else {
+      if (isLandscapeOrientation && dualPageMode) {
+        int pageNum = getCurrentPage();
+        float pdfWidth = getPageSize(pageNum).getWidth();
+        moveTo(
+            (-pdfFile.getDocLen(zoom) + getWidth() - pdfWidth / 2f) * progress,
+            currentYOffset,
+            moveHandle);
+      } else {
         moveTo((-pdfFile.getDocLen(zoom) + getWidth()) * progress, currentYOffset, moveHandle);
       }
     }
@@ -383,6 +386,10 @@ public class PDFView extends RelativeLayout {
 
   public double getPdfPageWidth(int page) {
     return getPageSize(page).getWidth();
+  }
+
+  public double getPdfPageHeight(int page) {
+    return getPageSize(page).getHeight();
   }
 
   public void setSwipeEnabled(boolean enableSwipe) {
@@ -945,11 +952,11 @@ public class PDFView extends RelativeLayout {
     if (swipeVertical) {
       animationManager.startYAnimation(currentYOffset, -offset);
     } else {
-      if(isLandscapeOrientation && dualPageMode) {
+      if (isLandscapeOrientation && dualPageMode) {
         int pageNum = getCurrentPage();
         float pdfWidth = getPageSize(pageNum).getWidth();
         animationManager.startXAnimation(currentXOffset, -(offset + (pdfWidth / 2)));
-      }else{
+      } else {
         animationManager.startXAnimation(currentXOffset, -offset);
       }
     }
@@ -1028,10 +1035,11 @@ public class PDFView extends RelativeLayout {
     moveTo(currentXOffset + dx, currentYOffset + dy);
   }
 
-  /** Change the zoom level
+  /**
+   * Change the zoom level
    *
    * @param zoom
-   * */
+   */
   public void zoomTo(float zoom) {
     this.zoom = zoom;
   }
@@ -1053,11 +1061,11 @@ public class PDFView extends RelativeLayout {
     moveTo(baseX, baseY);
   }
 
-  /** @see #zoomCenteredTo(float, PointF)
-   *
+  /**
+   * @see #zoomCenteredTo(float, PointF)
    * @param dzoom
    * @param pivot
-   * */
+   */
   public void zoomCenteredRelativeTo(float dzoom, PointF pivot) {
     zoomCenteredTo(zoom * dzoom, pivot);
   }
