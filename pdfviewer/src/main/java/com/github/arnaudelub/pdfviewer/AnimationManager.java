@@ -24,6 +24,8 @@ import android.graphics.PointF;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.OverScroller;
 
+import com.github.arnaudelub.pdfviewer.util.SnapEdge;
+
 
 /**
  * This manager is used by the PDFView to launch animations.
@@ -144,7 +146,9 @@ class AnimationManager {
         @Override
         public void onAnimationEnd(Animator animation) {
             pdfView.loadPages();
+
             pageFlinging = false;
+            pdfView.performPageSnap();
             hideHandle();
         }
     }
@@ -168,6 +172,7 @@ class AnimationManager {
         @Override
         public void onAnimationEnd(Animator animation) {
             pdfView.loadPages();
+
             pageFlinging = false;
             hideHandle();
         }

@@ -116,7 +116,7 @@ public final class PDFViewActivity_
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId_ = item.getItemId();
         if (itemId_ == R.id.pickFile) {
-            pickFile();
+            setPage();
             return true;
         }
         return super.onOptionsItemSelected(item);

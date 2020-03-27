@@ -4,7 +4,17 @@
             "outputFile": "/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/e11f595f274f32633185830398165a38/appcompat-1.0.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/fa516f8222cc4d1bc15fa4cb58d08d6d/core-1.0.0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

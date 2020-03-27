@@ -16,6 +16,7 @@ package com.github.arnaudelub.pdfviewer;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import com.github.arnaudelub.pdfviewer.exception.PageRenderingException;
 import com.github.arnaudelub.pdfviewer.util.FitPolicy;

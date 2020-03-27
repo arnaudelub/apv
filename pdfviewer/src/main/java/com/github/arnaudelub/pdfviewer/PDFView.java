@@ -299,6 +299,7 @@ public class PDFView extends RelativeLayout {
     } else {
       if (withAnimation) {
         animationManager.startXAnimation(currentXOffset, offset);
+
       } else {
         moveTo(offset, currentYOffset);
       }
@@ -871,7 +872,7 @@ public class PDFView extends RelativeLayout {
     } else {
       // Check Y offset
       float scaledPageHeight = toCurrentScale(pdfFile.getMaxPageHeight());
-      if (scaledPageHeight < (getHeight()) {
+      if (scaledPageHeight < getHeight()) {
         offsetY = getHeight() / 2 - scaledPageHeight / 2;
       } else {
         if (offsetY > 0) {

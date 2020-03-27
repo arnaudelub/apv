@@ -1,4 +1,4 @@
-#Fri Mar 20 14:45:40 CET 2020
+#Fri Mar 27 11:38:34 CET 2020
 base.0=/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

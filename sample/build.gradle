@@ -37,4 +37,5 @@ dependencies {
 
     implementation 'org.androidannotations:androidannotations-api:4.6.0'
     annotationProcessor "org.androidannotations:androidannotations:4.6.0"
+    implementation 'androidx.mediarouter:mediarouter:1.1.0'
 }

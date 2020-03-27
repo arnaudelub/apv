@@ -75,7 +75,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
 
 
-    @OptionsItem(R.id.pickFile)
+    /*@OptionsItem(R.id.pickFile)
     void pickFile() {
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 READ_EXTERNAL_STORAGE);
@@ -91,6 +91,11 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
         }
 
         launchPicker();
+    }*/
+
+    @OptionsItem(R.id.pickFile)
+    void setPage() {
+        pdfView.jumpTo(4, true);
     }
 
     void launchPicker() {
@@ -131,14 +136,14 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .nightMode(false)
                 .enableAntialiasing(false)
                 .landscapeOrientation(isLandscape)
-                .dualPageMode(true)
+                .dualPageMode(false)
                 .scrollHandle(new DefaultScrollHandle(this))
-                .spacing(0) // in dp
-                .autoSpacing(false)
+                //.spacing(10) // in dp
+                .autoSpacing(true)
                 .enableSwipe(true)
                 .swipeHorizontal(true)
                 .pageFling(true)
-                .fitEachPage(false)
+                .fitEachPage(true)
                 .onPageError(this)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load();

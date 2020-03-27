@@ -17,31 +17,32 @@
 13    <application
 13-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:6:2-18:16
 14        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-14-->[androidx.core:core:1.0.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/fa516f8222cc4d1bc15fa4cb58d08d6d/core-1.0.0/AndroidManifest.xml:22:18-86
+14-->[androidx.core:core:1.1.0] /Users/arnaud/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/AndroidManifest.xml:24:18-86
 15        android:debuggable="true"
 16        android:icon="@drawable/ic_launcher"
 16-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:7:3-39
 17        android:label="@string/app_name"
 17-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:8:3-35
-18        android:theme="@style/Theme.AppCompat.Light" >
-18-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:9:3-47
-19        <activity
-19-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:10:3-17:14
-20            android:name="com.github.arnaudelub.sample.PDFViewActivity_"
-20-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:11:4-35
-21            android:label="@string/app_name" >
-21-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:12:4-36
-22            <intent-filter>
-22-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:13:4-16:20
-23                <action android:name="android.intent.action.MAIN" />
-23-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:14:5-57
-23-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:14:13-54
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:15:5-65
-25-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:15:15-62
-26            </intent-filter>
-27        </activity>
-28    </application>
-29
-30</manifest>
+18        android:testOnly="true"
+19        android:theme="@style/Theme.AppCompat.Light" >
+19-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:9:3-47
+20        <activity
+20-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:10:3-17:14
+21            android:name="com.github.arnaudelub.sample.PDFViewActivity_"
+21-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:11:4-35
+22            android:label="@string/app_name" >
+22-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:12:4-36
+23            <intent-filter>
+23-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:13:4-16:20
+24                <action android:name="android.intent.action.MAIN" />
+24-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:14:5-57
+24-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:14:13-54
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:15:5-65
+26-->/Users/arnaud/dev/Android/remake/apv/sample/src/main/AndroidManifest.xml:15:15-62
+27            </intent-filter>
+28        </activity>
+29    </application>
+30
+31</manifest>
