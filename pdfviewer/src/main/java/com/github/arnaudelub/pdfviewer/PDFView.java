@@ -58,6 +58,7 @@ import com.github.arnaudelub.pdfviewer.util.Constants;
 import com.github.arnaudelub.pdfviewer.util.FitPolicy;
 import com.github.arnaudelub.pdfviewer.util.MathUtils;
 import com.github.arnaudelub.pdfviewer.util.SnapEdge;
+import com.github.arnaudelub.pdfviewer.util.PageSizeCalculator;
 import com.github.arnaudelub.pdfviewer.util.Util;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
@@ -288,6 +289,7 @@ public class PDFView extends RelativeLayout {
       return;
     }
     page = pdfFile.determineValidPageNumberFrom(page);
+
     float offset = page == 0 ? 0 : -pdfFile.getPageOffset(page, zoom);
     if (swipeVertical) {
       if (withAnimation) {
@@ -304,6 +306,7 @@ public class PDFView extends RelativeLayout {
       }
     }
     showPage(page);
+    Log.e("PDFView", "maxPageSize: " + toCurrentScale(pdfFile.getPageSize(page).getWidth()) + "And zoom is " + zoom + " and screen size: " + getWidth());
   }
 
   public void jumpTo(int page) {
@@ -385,7 +388,17 @@ public class PDFView extends RelativeLayout {
   }
 
   public double getPdfPageWidth(int page) {
+
     return getPageSize(page).getWidth();
+  }
+
+  public double getScreenHeight() {
+    return getHeight();
+  }
+
+  public double getScreenWidth() {
+
+    return getWidth();
   }
 
   public double getPdfPageHeight(int page) {

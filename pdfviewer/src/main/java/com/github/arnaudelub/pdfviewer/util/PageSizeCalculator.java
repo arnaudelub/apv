@@ -29,9 +29,9 @@ public class PageSizeCalculator {
     private final Size viewSize;
     private SizeF optimalMaxWidthPageSize;
     private SizeF optimalMaxHeightPageSize;
+    private boolean fitEachPage;
     private float widthRatio;
     private float heightRatio;
-    private boolean fitEachPage;
 
     public PageSizeCalculator(FitPolicy fitPolicy, Size originalMaxWidthPageSize, Size originalMaxHeightPageSize,
                               Size viewSize, boolean fitEachPage) {

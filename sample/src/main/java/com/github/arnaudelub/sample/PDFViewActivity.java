@@ -95,6 +95,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
     @OptionsItem(R.id.pickFile)
     void setPage() {
+
+        pdfView.getPdfPageWidth(4);
         pdfView.jumpTo(4, true);
     }
 

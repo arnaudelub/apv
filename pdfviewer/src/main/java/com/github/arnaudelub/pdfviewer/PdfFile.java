@@ -136,7 +136,7 @@ class PdfFile {
                     fitEachPage);
         maxWidthPageSize = calculator.getOptimalMaxWidthPageSize();
         maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
-
+        Log.e("PdfFile", "maxWidth : " + maxWidthPageSize);
         for (Size size : originalPageSizes) {
             pageSizes.add(
                     calculator.calculate(size, showTwoPages, isLandscape, originalPageSizes.indexOf(size)));
@@ -147,6 +147,7 @@ class PdfFile {
         prepareDocLen();
         preparePagesOffset();
     }
+
 
     public int getPagesCount() {
         return pagesCount;
