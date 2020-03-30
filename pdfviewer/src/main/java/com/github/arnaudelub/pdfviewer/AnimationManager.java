@@ -146,9 +146,8 @@ class AnimationManager {
         @Override
         public void onAnimationEnd(Animator animation) {
             pdfView.loadPages();
-
             pageFlinging = false;
-            pdfView.performPageSnap();
+
             hideHandle();
         }
     }
