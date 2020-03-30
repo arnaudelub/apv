@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/arnaudelub/apv'
     gitUrl = 'https://github.com/arnaudelub/apv.git'
 
-    libraryVersion = '1.3.2'
+    libraryVersion = '1.3.3'
 
     developerId = 'arnudelub'
     developerName = 'Arnaud Delubac'

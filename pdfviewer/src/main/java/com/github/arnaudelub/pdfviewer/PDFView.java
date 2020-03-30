@@ -287,7 +287,6 @@ public class PDFView extends RelativeLayout {
     if (pdfFile == null) {
       return;
     }
-
     page = pdfFile.determineValidPageNumberFrom(page);
     float offset = page == 0 ? 0 : -pdfFile.getPageOffset(page, zoom);
     if (swipeVertical) {
@@ -299,7 +298,7 @@ public class PDFView extends RelativeLayout {
     } else {
       if (withAnimation) {
         animationManager.startXAnimation(currentXOffset, offset);
-        performPageSnap();
+        performPageSnapAfterAnimation(offset);
       } else {
         moveTo(offset, currentYOffset);
       }
@@ -944,6 +943,31 @@ public class PDFView extends RelativeLayout {
       return;
     }
     int centerPage = findFocusPage(currentXOffset, currentYOffset);
+    SnapEdge edge = findSnapEdge(centerPage);
+    if (edge == SnapEdge.NONE) {
+      return;
+    }
+
+    float offset = snapOffsetForPage(centerPage, edge);
+    if (swipeVertical) {
+      animationManager.startYAnimation(currentYOffset, -offset);
+    } else {
+      if (isLandscapeOrientation && dualPageMode) {
+        int pageNum = getCurrentPage();
+        float pdfWidth = getPageSize(pageNum).getWidth();
+        animationManager.startXAnimation(currentXOffset, -(offset + (pdfWidth / 2)));
+      } else {
+        animationManager.startXAnimation(currentXOffset, -offset);
+      }
+    }
+  }
+
+  /** Animate to the nearest snapping position for the current SnapPolicy */
+  public void performPageSnapAfterAnimation(float newOffset) {
+    if (!pageSnap || pdfFile == null || pdfFile.getPagesCount() == 0) {
+      return;
+    }
+    int centerPage = findFocusPage(newOffset, currentYOffset);
     SnapEdge edge = findSnapEdge(centerPage);
     if (edge == SnapEdge.NONE) {
       return;
