@@ -96,8 +96,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     @OptionsItem(R.id.pickFile)
     void setPage() {
 
-        pdfView.getPdfPageWidth(4);
-        pdfView.jumpTo(4, true);
+        pdfView.getPdfPageWidth(0);
+        pdfView.jumpTo(0, true);
     }
 
     void launchPicker() {
@@ -138,7 +138,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .nightMode(false)
                 .enableAntialiasing(false)
                 .landscapeOrientation(isLandscape)
-                .dualPageMode(false)
+                .dualPageMode(true)
+                .displayAsBook(false)
                 .scrollHandle(new DefaultScrollHandle(this))
                 //.spacing(10) // in dp
                 .autoSpacing(true)

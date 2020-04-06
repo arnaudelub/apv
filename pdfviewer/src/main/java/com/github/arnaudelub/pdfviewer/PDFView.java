@@ -58,7 +58,6 @@ import com.github.arnaudelub.pdfviewer.util.Constants;
 import com.github.arnaudelub.pdfviewer.util.FitPolicy;
 import com.github.arnaudelub.pdfviewer.util.MathUtils;
 import com.github.arnaudelub.pdfviewer.util.SnapEdge;
-import com.github.arnaudelub.pdfviewer.util.PageSizeCalculator;
 import com.github.arnaudelub.pdfviewer.util.Util;
 import com.shockwave.pdfium.PdfDocument;
 import com.shockwave.pdfium.PdfiumCore;
@@ -173,6 +172,8 @@ public class PDFView extends RelativeLayout {
   private int backgroundColor = Color.WHITE;
 
   private boolean dualPageMode = false;
+
+  private boolean hasCover = false;
 
   private boolean isLandscapeOrientation = false;
 
@@ -306,7 +307,14 @@ public class PDFView extends RelativeLayout {
       }
     }
     showPage(page);
-    Log.e("PDFView", "maxPageSize: " + toCurrentScale(pdfFile.getPageSize(page).getWidth()) + "And zoom is " + zoom + " and screen size: " + getWidth());
+    Log.e(
+        "PDFView",
+        "maxPageSize: "
+            + toCurrentScale(pdfFile.getPageSize(page).getWidth())
+            + "And zoom is "
+            + zoom
+            + " and screen size: "
+            + getWidth());
   }
 
   public void jumpTo(int page) {
@@ -1236,6 +1244,10 @@ public class PDFView extends RelativeLayout {
     return dualPageMode;
   }
 
+  public boolean pdfHasCover() {
+    return hasCover;
+  }
+
   public boolean isOnLandscapeOrientation() {
     return isLandscapeOrientation;
   }
@@ -1251,6 +1263,10 @@ public class PDFView extends RelativeLayout {
 
   public void setDualPageMode(boolean dualPageMode) {
     this.dualPageMode = dualPageMode;
+  }
+
+  public void setHasCover(boolean hasCover) {
+    this.hasCover = hasCover;
   }
 
   public boolean isSwipeVertical() {
@@ -1441,6 +1457,8 @@ public class PDFView extends RelativeLayout {
 
     private boolean dualPageMode = false;
 
+    private boolean hasCover = false;
+
     private boolean swipeHorizontal = false;
 
     private boolean annotationRendering = false;
@@ -1564,6 +1582,11 @@ public class PDFView extends RelativeLayout {
       return this;
     }
 
+    public Configurator displayAsBook(boolean hasCover) {
+      this.hasCover = hasCover;
+      return this;
+    }
+
     public Configurator swipeHorizontal(boolean swipeHorizontal) {
       this.swipeHorizontal = swipeHorizontal;
       return this;
@@ -1647,6 +1670,7 @@ public class PDFView extends RelativeLayout {
       PDFView.this.setDefaultPage(defaultPage);
       PDFView.this.setLandscapeOrientation(landscapeOrientation);
       PDFView.this.setDualPageMode(dualPageMode);
+      PDFView.this.setHasCover(hasCover);
       PDFView.this.setBackGroundColor(backgroundColor);
       PDFView.this.setSwipeVertical(!swipeHorizontal);
       PDFView.this.enableAnnotationRendering(annotationRendering);
