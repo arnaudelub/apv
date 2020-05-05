@@ -299,11 +299,19 @@ public class PDFView extends RelativeLayout {
         moveTo(currentXOffset, offset);
       }
     } else {
+      if(isLandscapeOrientation && dualPageMode){
+        if(hasCover){
+          offset += page % 2 == 0 ? spacingPx + pdfFile.getPageLength(page -1, zoom) : spacingPx;
+        }else {
+          offset += page % 2 != 0 ? spacingPx + pdfFile.getPageLength(page -1, zoom) : spacingPx;
+        }
+      }
       if (withAnimation) {
         animationManager.startXAnimation(currentXOffset, offset);
         performPageSnapAfterAnimation(offset);
       } else {
         moveTo(offset, currentYOffset);
+        performPageSnapAfterAnimation(offset);
       }
     }
     showPage(page);
