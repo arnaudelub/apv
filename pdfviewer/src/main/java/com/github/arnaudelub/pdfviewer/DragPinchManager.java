@@ -165,7 +165,7 @@ class DragPinchManager
 
     SnapEdge edge = pdfView.findSnapEdge(targetPage);
     float offset = pdfView.snapOffsetForPage(targetPage, edge);
-    Log.d("PAGE", String.format("Offset before: %f", offset));
+    Log.d("PAGE", String.format("Target Page: %d", targetPage));
 
     if (pdfView.isOnLandscapeOrientation()
         && pdfView.isOnDualPageMode()
@@ -251,7 +251,6 @@ class DragPinchManager
 
   @Override
   public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-    Log.d("FLING", "Flingin");
     if (!pdfView.isSwipeEnabled()) {
       return false;
     }

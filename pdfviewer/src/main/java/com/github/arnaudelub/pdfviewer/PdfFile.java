@@ -142,7 +142,6 @@ class PdfFile {
             fitEachPage);
     maxWidthPageSize = calculator.getOptimalMaxWidthPageSize();
     maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
-    Log.e("PdfFile", "maxWidth : " + maxWidthPageSize);
     for (Size size : originalPageSizes) {
       pageSizes.add(
           calculator.calculate(size, showTwoPages, isLandscape, originalPageSizes.indexOf(size)));
@@ -204,12 +203,15 @@ class PdfFile {
         spacing += spacingPx;
       }
       if (showTwoPages && showCover && (i == 0 || i == getPagesCount() - 1)) {
-        Log.e("PDFFILE", "OK PREPAREAutoSpacnig for page 0");
         pageSpacing.add(spacing);
       } else if (showTwoPages && i == 0) {
         pageSpacing.add(spacing / 1.5f);
       } else if (showTwoPages){
-        pageSpacing.add(0f);
+        if(showCover && i % 2 != 0){
+          pageSpacing.add(spacing / 1.5f);
+        }else {
+          pageSpacing.add(0f);
+        }
       } else {
         pageSpacing.add(spacing);
       }
@@ -239,17 +241,17 @@ class PdfFile {
       if (autoSpacing || showTwoPages) {
         offset += pageSpacing.get(i) / 2f;
         if (i == 0 && showCover) {
-          Log.e("PdfFile","Ok prepagePageOffset for page 0");
           offset -= spacingPx / 2f;
         } else if (i == getPagesCount() - 1 && showCover) {
           offset += spacingPx / 2f;
         }
         pageOffsets.add(offset);
-        if(!showCover && i == 0) {
+        if((!showCover && i == 0) || (showCover && i%2 != 0)) {
           offset += size;
         }else {
           offset += size + pageSpacing.get(i) / 2f;
         }
+
       } else {
         pageOffsets.add(offset);
         offset += size + spacingPx;

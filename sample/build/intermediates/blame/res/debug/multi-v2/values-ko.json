@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
+            "outputFile": "/home/badtaste/Repository/Java/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
             "map": [
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-ko/values-ko.xml",
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-ko/values-ko.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-ko/values-ko.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,149,243,339,439,550,638,719,806,901,994,1084,1173,1262,1367,1468,1551,1631,1711,1802,1895,1985,2081,2164",
-                        "endColumns": "93,93,95,99,110,87,80,86,94,92,89,88,88,104,100,82,79,79,90,92,89,95,82,88",
-                        "endOffsets": "144,238,334,434,545,633,714,801,896,989,1079,1168,1257,1362,1463,1546,1626,1706,1797,1890,1980,2076,2159,2248"
-                    },
-                    "to": {
-                        "startLines": "29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2678,2772,2866,2962,3062,3173,3261,3342,3429,3524,3617,3707,3796,3885,3990,4091,4174,4254,4334,4425,4518,4608,4704,4787",
-                        "endColumns": "93,93,95,99,110,87,80,86,94,92,89,88,88,104,100,82,79,79,90,92,89,95,82,88",
-                        "endOffsets": "2767,2861,2957,3057,3168,3256,3337,3424,3519,3612,3702,3791,3880,3985,4086,4169,4249,4329,4420,4513,4603,4699,4782,4871"
-                    }
-                },
-                {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-ko/values-ko.xml",
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-ko/values-ko.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "4954",
                         "endColumns": "100",
                         "endOffsets": "5050"
+                    }
+                },
+                {
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-ko/values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,149,243,339,439,550,638,719,806,901,994,1084,1173,1262,1367,1468,1551,1631,1711,1802,1895,1985,2081,2164",
+                        "endColumns": "93,93,95,99,110,87,80,86,94,92,89,88,88,104,100,82,79,79,90,92,89,95,82,88",
+                        "endOffsets": "144,238,334,434,545,633,714,801,896,989,1079,1168,1257,1362,1463,1546,1626,1706,1797,1890,1980,2076,2159,2248"
+                    },
+                    "to": {
+                        "startLines": "29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2678,2772,2866,2962,3062,3173,3261,3342,3429,3524,3617,3707,3796,3885,3990,4091,4174,4254,4334,4425,4518,4608,4704,4787",
+                        "endColumns": "93,93,95,99,110,87,80,86,94,92,89,88,88,104,100,82,79,79,90,92,89,95,82,88",
+                        "endOffsets": "2767,2861,2957,3057,3168,3256,3337,3424,3519,3612,3702,3791,3880,3985,4086,4169,4249,4329,4420,4513,4603,4699,4782,4871"
                     }
                 }
             ]

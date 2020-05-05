@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/arnaud/dev/Android/remake/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "/home/badtaste/Repository/Java/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-vi/values-vi.xml",
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-vi/values-vi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "54",
-                        "startColumns": "4",
-                        "startOffsets": "5281",
-                        "endColumns": "100",
-                        "endOffsets": "5377"
-                    }
-                },
-                {
-                    "source": "/Users/arnaud/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-vi/values-vi.xml",
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-vi/values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2817,2916,3022,3131,3245,3364,3461,3547,3643,3751,3846,3941,4037,4130,4243,4359,4446,4528,4610,4707,4813,4911,5014,5102",
                         "endColumns": "98,105,108,113,118,96,85,95,107,94,94,95,92,112,115,86,81,81,96,105,97,102,87,94",
                         "endOffsets": "2911,3017,3126,3240,3359,3456,3542,3638,3746,3841,3936,4032,4125,4238,4354,4441,4523,4605,4702,4808,4906,5009,5097,5192"
+                    }
+                },
+                {
+                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-vi/values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "54",
+                        "startColumns": "4",
+                        "startOffsets": "5281",
+                        "endColumns": "100",
+                        "endOffsets": "5377"
                     }
                 }
             ]

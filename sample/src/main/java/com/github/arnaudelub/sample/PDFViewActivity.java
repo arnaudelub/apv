@@ -139,7 +139,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .enableAntialiasing(false)
                 .landscapeOrientation(isLandscape)
                 .dualPageMode(true)
-                .displayAsBook(false)
+                .displayAsBook(true)
                 .scrollHandle(new DefaultScrollHandle(this))
                 //.spacing(10) // in dp
                 .autoSpacing(true)

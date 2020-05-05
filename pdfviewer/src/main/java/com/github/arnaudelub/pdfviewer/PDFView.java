@@ -1010,21 +1010,45 @@ public class PDFView extends RelativeLayout {
 
   /** Find the edge to snap to when showing the specified page */
   SnapEdge findSnapEdge(int page) {
+    Log.e("SNAPEDGE","Finding smnap edge");
     if (!pageSnap || page < 0) {
       return SnapEdge.NONE;
     }
     float currentOffset = swipeVertical ? currentYOffset : currentXOffset;
-    float offset = -pdfFile.getPageOffset(page, zoom);
-    int length = swipeVertical ? getHeight() : getWidth();
-    float pageLength = pdfFile.getPageLength(page, zoom);
+    float offset;
+    int length;
+    float pageLength;
+    if(!isOnDualPageMode() && !isLandscapeOrientation){
+      offset = -pdfFile.getPageOffset(page, zoom);
+      length = swipeVertical ? getHeight() : getWidth();
+      pageLength = pdfFile.getPageLength(page, zoom);
+    } else {
+      Log.e("SNAPEDGE","Finding smnap edge dual page mode");
+      Log.e("SNAPEDGE",String.format("Actual page is %d", page));
+      offset = -pdfFile.getPageOffset(page, zoom);
+      length = swipeVertical ? getHeight() : getWidth();
+      if(hasCover) {
+        pageLength = page % 2 == 0 ? pdfFile.getPageLength(page, zoom) : pdfFile.getPageLength(page, zoom) * 2;
+        Log.e("SNAPEDGE",String.format("PageLength page is %f", pageLength));
+      } else {
+        pageLength = page % 2 == 0 ? pdfFile.getPageLength(page, zoom) * 2 : pdfFile.getPageLength(page, zoom);
+      }
+    }
+
 
     if (length >= pageLength) {
+      Log.e("SNAPEDGE","Finding smnap edgereturn center");
       return SnapEdge.CENTER;
     } else if (currentOffset >= offset) {
+      Log.e("SNAPEDGE","Finding smnap edgereturn start");
       return SnapEdge.START;
-    } else if (offset - pageLength > currentOffset - length) {
+
+    } else if (offset - pageLength>= currentOffset - length) {
+      Log.e("SNAPEDGE","Finding smnap edgereturn end");
       return SnapEdge.END;
+
     } else {
+      Log.e("SNAPEDGE","Finding smnap edgereturn NONE");
       return SnapEdge.NONE;
     }
   }
@@ -1035,7 +1059,7 @@ public class PDFView extends RelativeLayout {
 
     float length = swipeVertical ? getHeight() : getWidth();
     float pageLength = pdfFile.getPageLength(pageIndex, zoom);
-
+    Log.e("snapoffset",String.format("Snap offset for page"));
     if (edge == SnapEdge.CENTER) {
       offset = offset - length / 2f + pageLength / 2f;
     } else if (edge == SnapEdge.END) {
