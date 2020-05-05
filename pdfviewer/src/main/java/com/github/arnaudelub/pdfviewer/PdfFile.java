@@ -266,6 +266,7 @@ class PdfFile {
   /** Get the page's height if swiping vertical, or width if swiping horizontal. */
   public float getPageLength(int pageIndex, float zoom) {
     SizeF size = getPageSize(pageIndex);
+    SizeF size2 = getPageSize(pageIndex+1);
     return (isVertical ? size.getHeight() : size.getWidth()) * zoom;
   }
 

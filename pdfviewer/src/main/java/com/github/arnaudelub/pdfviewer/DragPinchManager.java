@@ -151,7 +151,7 @@ class DragPinchManager
     } else if (pdfView.isOnLandscapeOrientation()
         && pdfView.isOnDualPageMode()
         && direction == 1
-        && startingPage == 0
+        && startingPage % 2 == 0
         && pdfView.pdfHasCover()) {
       targetPage = Math.max(0, Math.min(pdfView.getPageCount() - 1, startingPage + 1));
       newPage += 1;
@@ -287,9 +287,26 @@ class DragPinchManager
     int yOffset = (int) pdfView.getCurrentYOffset();
 
     PdfFile pdfFile = pdfView.pdfFile;
-
-    float pageStart = -pdfFile.getPageOffset(pdfView.getCurrentPage(), pdfView.getZoom());
-    float pageEnd = pageStart - pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom());
+    float pageStart;
+    float pageEnd;
+    if(!pdfView.isOnLandscapeOrientation()) {
+      pageStart = -pdfFile.getPageOffset(pdfView.getCurrentPage(), pdfView.getZoom());
+      pageEnd = pageStart - pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom());
+    } else if(pdfView.pdfHasCover()) {
+      pageStart = pdfView.getCurrentPage() % 2 != 0 ?
+              -pdfFile.getPageOffset(pdfView.getCurrentPage(), pdfView.getZoom()) :
+              -pdfFile.getPageOffset(pdfView.getCurrentPage()-1, pdfView.getZoom());
+      pageEnd = pageStart - (pdfView.getCurrentPage() % 2 != 0 ?
+              pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom()) + pdfFile.getPageLength(pdfView.getCurrentPage() + 1, pdfView.getZoom()) :
+              pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom()) + pdfFile.getPageLength(pdfView.getCurrentPage() - 1, pdfView.getZoom()));
+    }else {
+      pageStart = pdfView.getCurrentPage() % 2 == 0 ?
+              -pdfFile.getPageOffset(pdfView.getCurrentPage(), pdfView.getZoom()) :
+              -pdfFile.getPageOffset(pdfView.getCurrentPage()-1, pdfView.getZoom());
+      pageEnd = pageStart - (pdfView.getCurrentPage() % 2 == 0 ?
+              pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom()) + pdfFile.getPageLength(pdfView.getCurrentPage() + 1, pdfView.getZoom()) :
+              pdfFile.getPageLength(pdfView.getCurrentPage(), pdfView.getZoom()) + pdfFile.getPageLength(pdfView.getCurrentPage() - 1, pdfView.getZoom()));
+    }
     float minX, minY, maxX, maxY;
     if (pdfView.isSwipeVertical()) {
       minX = -(pdfView.toCurrentScale(pdfFile.getMaxPageWidth()) - pdfView.getWidth());

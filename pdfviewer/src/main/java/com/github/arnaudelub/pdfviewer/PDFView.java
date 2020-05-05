@@ -1010,47 +1010,55 @@ public class PDFView extends RelativeLayout {
 
   /** Find the edge to snap to when showing the specified page */
   SnapEdge findSnapEdge(int page) {
-    Log.e("SNAPEDGE","Finding smnap edge");
     if (!pageSnap || page < 0) {
       return SnapEdge.NONE;
     }
     float currentOffset = swipeVertical ? currentYOffset : currentXOffset;
     float offset;
+    float offsetMinus1;
     int length;
     float pageLength;
     if(!isOnDualPageMode() && !isLandscapeOrientation){
       offset = -pdfFile.getPageOffset(page, zoom);
+      offsetMinus1 = -pdfFile.getPageOffset(page, zoom);
       length = swipeVertical ? getHeight() : getWidth();
       pageLength = pdfFile.getPageLength(page, zoom);
     } else {
-      Log.e("SNAPEDGE","Finding smnap edge dual page mode");
-      Log.e("SNAPEDGE",String.format("Actual page is %d", page));
-      offset = -pdfFile.getPageOffset(page, zoom);
-      length = swipeVertical ? getHeight() : getWidth();
-      if(hasCover) {
-        pageLength = page % 2 == 0 ? pdfFile.getPageLength(page, zoom) : pdfFile.getPageLength(page, zoom) * 2;
-        Log.e("SNAPEDGE",String.format("PageLength page is %f", pageLength));
-      } else {
-        pageLength = page % 2 == 0 ? pdfFile.getPageLength(page, zoom) * 2 : pdfFile.getPageLength(page, zoom);
+      if(hasCover && page % 2 != 0){
+        pageLength =  pdfFile.getPageLength(page, zoom) + pdfFile.getPageLength(page+1, zoom);
+        offset = -pdfFile.getPageOffset(page+1, zoom);
+        offsetMinus1 = -pdfFile.getPageOffset(page, zoom);
+      }else {
+        pageLength =  pdfFile.getPageLength(page, zoom) + pdfFile.getPageLength(page+1, zoom);
+        offset = -pdfFile.getPageOffset(page, zoom);
+        offsetMinus1 = -pdfFile.getPageOffset(page-1, zoom);
       }
+      length = swipeVertical ? getHeight() : getWidth();
     }
-
 
     if (length >= pageLength) {
-      Log.e("SNAPEDGE","Finding smnap edgereturn center");
       return SnapEdge.CENTER;
-    } else if (currentOffset >= offset) {
-      Log.e("SNAPEDGE","Finding smnap edgereturn start");
-      return SnapEdge.START;
+    }else {
+      if (!isLandscapeOrientation) {
+        if (currentOffset >= offset) {
+          return SnapEdge.START;
 
-    } else if (offset - pageLength>= currentOffset - length) {
-      Log.e("SNAPEDGE","Finding smnap edgereturn end");
-      return SnapEdge.END;
+        } else if (offset - pageLength >= currentOffset - length ) {
+          return SnapEdge.END;
 
-    } else {
-      Log.e("SNAPEDGE","Finding smnap edgereturn NONE");
-      return SnapEdge.NONE;
+        }
+      } else {
+        if (currentOffset >= offsetMinus1) {
+          return SnapEdge.START;
+
+        } else if (offset - pageLength >= currentOffset - length - 0.8) {
+          return SnapEdge.END;
+
+        }
+      }
+
     }
+    return SnapEdge.NONE;
   }
 
   /** Get the offset to move to in order to snap to the page */
@@ -1059,17 +1067,18 @@ public class PDFView extends RelativeLayout {
 
     float length = swipeVertical ? getHeight() : getWidth();
     float pageLength = pdfFile.getPageLength(pageIndex, zoom);
-    Log.e("snapoffset",String.format("Snap offset for page"));
+
+
     if (edge == SnapEdge.CENTER) {
       offset = offset - length / 2f + pageLength / 2f;
     } else if (edge == SnapEdge.END) {
-      offset = offset - length + pageLength;
+      offset = offset - length + (pageLength/1.2f);
     }
     return offset;
   }
 
   int findFocusPage(float xOffset, float yOffset) {
-    Log.d("FOCUS", "GETTING FOCUS");
+
     float currOffset = swipeVertical ? yOffset : xOffset;
     float length = swipeVertical ? getHeight() : getWidth();
     // make sure first and last page can be found
@@ -1085,8 +1094,28 @@ public class PDFView extends RelativeLayout {
 
   /** @return true if single page fills the entire screen in the scrolling direction */
   public boolean pageFillsScreen() {
-    float start = -pdfFile.getPageOffset(currentPage, zoom);
-    float end = start - pdfFile.getPageLength(currentPage, zoom);
+    float start;
+    float end;
+    if(!isOnLandscapeOrientation()) {
+      start = -pdfFile.getPageOffset(getCurrentPage(), getZoom());
+      end = start - pdfFile.getPageLength(getCurrentPage(), getZoom());
+    } else if(pdfHasCover()) {
+      start = getCurrentPage() % 2 != 0 ?
+              -pdfFile.getPageOffset(getCurrentPage(), getZoom()) :
+              -pdfFile.getPageOffset(getCurrentPage()-1, getZoom());
+      end = start - (getCurrentPage() % 2 != 0 ?
+              pdfFile.getPageLength(getCurrentPage(), getZoom()) + pdfFile.getPageLength(getCurrentPage() + 1, getZoom()) :
+              pdfFile.getPageLength(getCurrentPage(), getZoom()) + pdfFile.getPageLength(getCurrentPage() - 1, getZoom()));
+    }else {
+      start = getCurrentPage() % 2 == 0 ?
+              -pdfFile.getPageOffset(getCurrentPage(), getZoom()) :
+              -pdfFile.getPageOffset(getCurrentPage()-1, getZoom());
+      end = start - (getCurrentPage() % 2 == 0 ?
+              pdfFile.getPageLength(getCurrentPage(), getZoom()) + pdfFile.getPageLength(getCurrentPage() + 1, getZoom()) :
+              pdfFile.getPageLength(getCurrentPage(), getZoom()) + pdfFile.getPageLength(getCurrentPage() - 1, getZoom()));
+    }
+    /*float start = -pdfFile.getPageOffset(currentPage, zoom);
+    float end = start - pdfFile.getPageLength(currentPage, zoom);*/
     if (isSwipeVertical()) {
       return start > currentYOffset && end < currentYOffset - getHeight();
     } else {
