@@ -48,6 +48,11 @@ public class Callbacks {
     private OnPageChangeListener onPageChangeListener;
 
     /**
+     * Call back object to call when the zoom has changed
+     */
+    private OnZoomChangeListener onZoomChangeListener;
+
+    /**
      * Call back object to call when the page is scrolled
      */
     private OnPageScrollListener onPageScrollListener;
@@ -121,6 +126,16 @@ public class Callbacks {
     public void callOnPageChange(int page, int pagesCount) {
         if (onPageChangeListener != null) {
             onPageChangeListener.onPageChanged(page, pagesCount);
+        }
+    }
+
+    public void setOnZoomChange(OnZoomChangeListener onZoomChangeListener) {
+        this.onZoomChangeListener = onZoomChangeListener;
+    }
+
+    public void callOnZoomChange(double zoom) {
+        if(onZoomChangeListener != null) {
+            onZoomChangeListener.onZoomChanged(zoom);
         }
     }
 

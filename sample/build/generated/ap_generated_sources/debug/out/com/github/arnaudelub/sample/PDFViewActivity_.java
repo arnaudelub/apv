@@ -51,6 +51,7 @@ public final class PDFViewActivity_
         if (nonConfigurationInstance!= null) {
             uri = nonConfigurationInstance.uri;
             pageNumber = nonConfigurationInstance.pageNumber;
+            zoomValue = nonConfigurationInstance.zoomValue;
         }
 
     }
@@ -102,6 +103,7 @@ public final class PDFViewActivity_
         nonConfigurationInstanceState_.superNonConfigurationInstance = super.onRetainCustomNonConfigurationInstance();
         nonConfigurationInstanceState_.uri = uri;
         nonConfigurationInstanceState_.pageNumber = pageNumber;
+        nonConfigurationInstanceState_.zoomValue = zoomValue;
         return nonConfigurationInstanceState_;
     }
 
@@ -168,5 +170,6 @@ public final class PDFViewActivity_
         public Uri uri;
         public Object superNonConfigurationInstance;
         public Integer pageNumber;
+        public double zoomValue;
     }
 }

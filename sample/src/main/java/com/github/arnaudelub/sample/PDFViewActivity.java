@@ -36,6 +36,7 @@ import com.github.arnaudelub.pdfviewer.PDFView;
 import com.github.arnaudelub.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.arnaudelub.pdfviewer.listener.OnPageChangeListener;
 import com.github.arnaudelub.pdfviewer.listener.OnPageErrorListener;
+import com.github.arnaudelub.pdfviewer.listener.OnZoomChangeListener;
 import com.github.arnaudelub.pdfviewer.scroll.DefaultScrollHandle;
 import com.github.arnaudelub.pdfviewer.util.FitPolicy;
 import com.shockwave.pdfium.PdfDocument;
@@ -52,7 +53,7 @@ import java.util.List;
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.options)
 public class PDFViewActivity extends AppCompatActivity implements OnPageChangeListener, OnLoadCompleteListener,
-        OnPageErrorListener {
+        OnPageErrorListener, OnZoomChangeListener {
 
     private static final String TAG = PDFViewActivity.class.getSimpleName();
 
@@ -70,6 +71,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
     @NonConfigurationInstance
     Integer pageNumber = 0;
+    @NonConfigurationInstance
+    double zoomValue = 1;
 
     String pdfFileName;
 
@@ -97,7 +100,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     void setPage() {
 
         pdfView.getPdfPageWidth(0);
-        pdfView.jumpTo(0, true);
+        //pdfView.jumpTo(0, true);
+        pdfView.resetZoomWithAnimation();
     }
 
     void launchPicker() {
@@ -138,8 +142,8 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .nightMode(false)
                 .enableAntialiasing(false)
                 .landscapeOrientation(isLandscape)
-                .dualPageMode(true)
-                .displayAsBook(true)
+                .dualPageMode(isLandscape)
+                .displayAsBook(isLandscape)
                 .scrollHandle(new DefaultScrollHandle(this))
                 //.spacing(10) // in dp
                 .autoSpacing(true)
@@ -148,6 +152,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .pageFling(true)
                 .fitEachPage(true)
                 .onPageError(this)
+                .onZoomChange(this)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .load();
 
@@ -169,6 +174,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
                 .swipeHorizontal(true)
                 .pageFling(true)
                 .onPageError(this)
+                .onZoomChange(this)
                 .load();
     }
 
@@ -257,4 +263,10 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     public void onPageError(int page, Throwable t) {
         Log.e(TAG, "Cannot load page " + page);
     }
+
+    @Override
+    public void onZoomChanged(double zoom) {
+        zoomValue = zoom;
+    }
 }
+

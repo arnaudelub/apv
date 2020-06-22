@@ -6,7 +6,7 @@ INJECTED from /home/badtaste/Repository/Java/apv/sample/src/main/AndroidManifest
 MERGED from [:pdfviewer] /home/badtaste/Repository/Java/apv/pdfviewer/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.mediarouter:mediarouter:1.1.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/ff763c3a9bee0ca784c3e453baa40844/jetified-pdfium-android-1.9.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/10b03243d79346f329d5267ad3beb725/jetified-pdfium-android-1.9.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/78342115bf4afc19c4bab92e222ba05f/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.1.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/f8bdbf8b34af9f0d749f8df487bfe4e6/media-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.palette:palette:1.0.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/d8167ed4e11d5a92b9a459aa81a3ee4b/palette-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -94,8 +94,8 @@ MERGED from [androidx.mediarouter:mediarouter:1.1.0] /home/badtaste/.gradle/cach
 MERGED from [androidx.mediarouter:mediarouter:1.1.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/ff763c3a9bee0ca784c3e453baa40844/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/ff763c3a9bee0ca784c3e453baa40844/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/10b03243d79346f329d5267ad3beb725/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.barteksc:pdfium-android:1.9.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/10b03243d79346f329d5267ad3beb725/jetified-pdfium-android-1.9.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/78342115bf4afc19c4bab92e222ba05f/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/78342115bf4afc19c4bab92e222ba05f/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.1.0] /home/badtaste/.gradle/caches/transforms-2/files-2.1/f8bdbf8b34af9f0d749f8df487bfe4e6/media-1.1.0/AndroidManifest.xml:20:5-22:41

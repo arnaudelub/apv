@@ -36,16 +36,7 @@ import android.widget.RelativeLayout;
 import com.github.arnaudelub.pdfviewer.exception.PageRenderingException;
 import com.github.arnaudelub.pdfviewer.link.DefaultLinkHandler;
 import com.github.arnaudelub.pdfviewer.link.LinkHandler;
-import com.github.arnaudelub.pdfviewer.listener.Callbacks;
-import com.github.arnaudelub.pdfviewer.listener.OnDrawListener;
-import com.github.arnaudelub.pdfviewer.listener.OnErrorListener;
-import com.github.arnaudelub.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.arnaudelub.pdfviewer.listener.OnLongPressListener;
-import com.github.arnaudelub.pdfviewer.listener.OnPageChangeListener;
-import com.github.arnaudelub.pdfviewer.listener.OnPageErrorListener;
-import com.github.arnaudelub.pdfviewer.listener.OnPageScrollListener;
-import com.github.arnaudelub.pdfviewer.listener.OnRenderListener;
-import com.github.arnaudelub.pdfviewer.listener.OnTapListener;
+import com.github.arnaudelub.pdfviewer.listener.*;
 import com.github.arnaudelub.pdfviewer.model.PagePart;
 import com.github.arnaudelub.pdfviewer.scroll.ScrollHandle;
 import com.github.arnaudelub.pdfviewer.source.AssetSource;
@@ -1027,6 +1018,7 @@ public class PDFView extends RelativeLayout {
     int length;
     float pageLength;
     if(!isOnDualPageMode() && !isLandscapeOrientation){
+      Log.e("SNAP EDGE", "OK in portrait mode");
       offset = -pdfFile.getPageOffset(page, zoom);
       offsetMinus1 = -pdfFile.getPageOffset(page, zoom);
       length = swipeVertical ? getHeight() : getWidth();
@@ -1149,6 +1141,7 @@ public class PDFView extends RelativeLayout {
    */
   public void zoomTo(float zoom) {
     this.zoom = zoom;
+    callbacks.callOnZoomChange(zoom);
   }
 
   /**
@@ -1252,7 +1245,7 @@ public class PDFView extends RelativeLayout {
   }
 
   public void zoomWithAnimation(float scale) {
-    animationManager.startZoomAnimation(getWidth() / 2, getHeight() / 2, zoom, scale);
+    animationManager.startZoomAnimation(getWidth() / 2f, getHeight() / 2f, zoom, scale);
   }
 
   private void setScrollHandle(ScrollHandle scrollHandle) {
@@ -1498,6 +1491,8 @@ public class PDFView extends RelativeLayout {
 
     private OnPageChangeListener onPageChangeListener;
 
+    private OnZoomChangeListener onZoomChangeListener;
+
     private OnPageScrollListener onPageScrollListener;
 
     private OnRenderListener onRenderListener;
@@ -1600,6 +1595,11 @@ public class PDFView extends RelativeLayout {
 
     public Configurator onPageChange(OnPageChangeListener onPageChangeListener) {
       this.onPageChangeListener = onPageChangeListener;
+      return this;
+    }
+
+    public Configurator onZoomChange(OnZoomChangeListener onZoomChangeListener) {
+      this.onZoomChangeListener = onZoomChangeListener;
       return this;
     }
 
@@ -1719,6 +1719,7 @@ public class PDFView extends RelativeLayout {
       PDFView.this.callbacks.setOnDraw(onDrawListener);
       PDFView.this.callbacks.setOnDrawAll(onDrawAllListener);
       PDFView.this.callbacks.setOnPageChange(onPageChangeListener);
+      PDFView.this.callbacks.setOnZoomChange(onZoomChangeListener);
       PDFView.this.callbacks.setOnPageScroll(onPageScrollListener);
       PDFView.this.callbacks.setOnRender(onRenderListener);
       PDFView.this.callbacks.setOnTap(onTapListener);
