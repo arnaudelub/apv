@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/badtaste/Repository/Java/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "/home/idelub/Repository/Java/apv/sample/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
             "map": [
                 {
-                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-hu/values-hu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "54",
-                        "startColumns": "4",
-                        "startOffsets": "5395",
-                        "endColumns": "100",
-                        "endOffsets": "5491"
-                    }
-                },
-                {
-                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-hu/values-hu.xml",
+                    "source": "/home/idelub/.gradle/caches/transforms-2/files-2.1/0886d292032bf158cf46e2bdc28fd300/appcompat-1.0.2/res/values-hu/values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/badtaste/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-hu/values-hu.xml",
+                    "source": "/home/idelub/.gradle/caches/transforms-2/files-2.1/799ba6a831c318c6e223719052892b37/mediarouter-1.1.0/res/values-hu/values-hu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2878,2980,3093,3204,3322,3435,3532,3621,3715,3830,3928,4027,4122,4216,4323,4446,4531,4618,4705,4810,4912,5014,5129,5217",
                         "endColumns": "101,112,110,117,112,96,88,93,114,97,98,94,93,106,122,84,86,86,104,101,101,114,87,94",
                         "endOffsets": "2975,3088,3199,3317,3430,3527,3616,3710,3825,3923,4022,4117,4211,4318,4441,4526,4613,4700,4805,4907,5009,5124,5212,5307"
+                    }
+                },
+                {
+                    "source": "/home/idelub/.gradle/caches/transforms-2/files-2.1/ed8a92f2d2f336db88955cb17589d154/core-1.1.0/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "54",
+                        "startColumns": "4",
+                        "startOffsets": "5395",
+                        "endColumns": "100",
+                        "endOffsets": "5491"
                     }
                 }
             ]

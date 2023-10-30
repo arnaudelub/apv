@@ -60,7 +60,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     private final static int REQUEST_CODE = 42;
     public static final int PERMISSION_CODE = 42042;
 
-    public static final String SAMPLE_FILE = "sample.pdf";
+    public static final String SAMPLE_FILE = "guide.pdf";
     public static final String READ_EXTERNAL_STORAGE = "android.permission.READ_EXTERNAL_STORAGE";
 
     @ViewById
@@ -101,7 +101,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
 
         pdfView.getPdfPageWidth(0);
         //pdfView.jumpTo(0, true);
-        pdfView.resetZoomWithAnimation();
+        pdfView.zoomWithAnimation(500, 500, (float) 2.5);
     }
 
     void launchPicker() {
@@ -114,6 +114,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
             Toast.makeText(this, R.string.toast_pick_file_error, Toast.LENGTH_SHORT).show();
         }
     }
+
 
     @AfterViews
     void afterViews() {

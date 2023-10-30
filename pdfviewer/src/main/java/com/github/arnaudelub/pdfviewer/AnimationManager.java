@@ -90,6 +90,7 @@ class AnimationManager {
     }
 
     public void startPageFlingAnimation(float targetOffset) {
+		if (!pdfView) return;
         if (pdfView.isSwipeVertical()) {
             startYAnimation(pdfView.getCurrentYOffset(), targetOffset);
         } else {
@@ -99,6 +100,7 @@ class AnimationManager {
     }
 
     void computeFling() {
+		if (!pdfView) return;
         if (scroller.computeScrollOffset()) {
             pdfView.moveTo(scroller.getCurrX(), scroller.getCurrY());
             pdfView.loadPageByOffset();
@@ -131,6 +133,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
+			if (!pdfView) return;
             float offset = (Float) animation.getAnimatedValue();
             pdfView.moveTo(offset, pdfView.getCurrentYOffset());
             pdfView.loadPageByOffset();
@@ -138,6 +141,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationCancel(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
             pageFlinging = false;
             hideHandle();
@@ -145,6 +149,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationEnd(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
             pageFlinging = false;
 
@@ -156,6 +161,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
+			if (!pdfView) return;
             float offset = (Float) animation.getAnimatedValue();
             pdfView.moveTo(pdfView.getCurrentXOffset(), offset);
             pdfView.loadPageByOffset();
@@ -163,6 +169,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationCancel(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
             pageFlinging = false;
             hideHandle();
@@ -170,6 +177,7 @@ class AnimationManager {
 
         @Override
         public void onAnimationEnd(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
 
             pageFlinging = false;
@@ -189,18 +197,21 @@ class AnimationManager {
 
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
+			if (!pdfView) return;
             float zoom = (Float) animation.getAnimatedValue();
             pdfView.zoomCenteredTo(zoom, new PointF(centerX, centerY));
         }
 
         @Override
         public void onAnimationCancel(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
             hideHandle();
         }
 
         @Override
         public void onAnimationEnd(Animator animation) {
+			if (!pdfView) return;
             pdfView.loadPages();
             pdfView.performPageSnap();
             hideHandle();
@@ -217,6 +228,7 @@ class AnimationManager {
     }
 
     private void hideHandle() {
+		if (!pdfView) return;
         if (pdfView.getScrollHandle() != null) {
             pdfView.getScrollHandle().hideDelayed();
         }

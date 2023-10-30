@@ -1,4 +1,4 @@
-#Mon Jun 22 15:23:02 CEST 2020
-base.0=/home/badtaste/Repository/Java/apv/sample/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Tue Mar 02 10:07:13 CET 2021
+base.0=/home/idelub/Repository/Java/apv/sample/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

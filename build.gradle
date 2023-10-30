@@ -17,7 +17,7 @@ plugins {
 
 group 'com.github.arnaudelub'
 archivesBaseName = 'apv'
-version '1.5.1'
+version '1.5.3'
 
 allprojects {
     repositories {

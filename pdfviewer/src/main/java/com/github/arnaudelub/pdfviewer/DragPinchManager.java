@@ -196,6 +196,7 @@ class DragPinchManager
     }
 
     if (pdfView.getZoom() < pdfView.getMidZoom()) {
+      Log.e("DOUBNLE TAP", "X is " + e + " and width is " + pdfView.getWidth() + " and height is " + pdfView.getHeight());
       pdfView.zoomWithAnimation(e.getX(), e.getY(), pdfView.getMidZoom());
     } else if (pdfView.getZoom() < pdfView.getMaxZoom()) {
       pdfView.zoomWithAnimation(e.getX(), e.getY(), pdfView.getMaxZoom());
